@@ -1,10 +1,7 @@
 \documentclass[11pt]{amsart}
 \usepackage[margin=1in, marginparwidth=0.8in]{geometry}
-\usepackage[colorlinks,
-            linkcolor=black!50!red,
-            citecolor=blue,
-            pdfpagemode=None]{hyperref}
-\usepackage{cleveref}
+\usepackage[colorlinks,linkcolor=black!50!red,citecolor=blue,pdfpagemode=None]{hyperref}
+\usepackage[capitalise]{cleveref}
 
 \usepackage[draft]{say}
 \newcommand{\saySS}[1]{\say[SS]{#1}}
@@ -15,8 +12,8 @@
 \newcommand{\cAb}{\mathcal{A}_\bullet}
 \newcommand{\Supp}{\operatorname{Supp}}
 \newcommand{\ZZ}{\mathbb{Z}}
-\newcommand{\bfg}{\mathbf{g}}
-\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bg}{\mathbf{g}}
+\newcommand{\bc}{\mathbf{c}}
 
 % ambients and numbering
 \newtheorem{theorem}{Theorem}[section]
@@ -49,55 +46,160 @@
 \email{email-here}
 
 \begin{abstract}
-We give explicit description of all the exchange relations for finitie type cluster algebras with acyclic initial seed and principal coefficients.
+We give an explicit description of all the exchange relations for finitie type cluster algebras with acyclic initial seed and principal coefficients.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-In \cite{Ste13} the third author gave a formula for all the exchange relations in any finite type acyclic cluster algebra without coefficients.
-This formula required only to know the initial exchange matrix, or rather the \emph{Coxeter element} naturally associated to it, and the \emph{$\bfg$-vectors} of the two cluster variables involved.
-Our goal here is to improve on this result to include principal coefficients.
+  In \cite{Ste13} the third author gave a formula for all the exchange relations in any finite type acyclic cluster algebra without coefficients.
+  Our main theorem here improves on this result to include principal coefficients.
+  
+  \begin{theorem}
+    \label{thm:main_vague}
+    In any cluster algebra of finite type with principal coefficients at an acyclic initial seed, the coefficient appearing in the exchange relation of any two exchangeable cluster variables is \emph{explicitly} determined by their $\bg$-vectors. 
+  \end{theorem}
+  
+  The claim in previous statement lays in the word ``explicitly''. 
+  Indeed, since cluster variables are parametrized by their $\bg$-vectors, and since exchange relations are prescribed by the cluster variables involved, it is obvious that the $\bg$-vectors determines indirectly the coefficients. 
+  This note is about giving precise formulas to compute them.
+ 
+  In order to make \cref{thm:main_vague} more precise we need to recall few notions and results from \cite{Ste13,YZ08}.
 
-Let $B$ be any finite type acyclic 
-
-\begin{theorem}
-  In any cluster algebra of finite type with principal coefficients at an acyclic initial seed the coefficient appearing in the exchange relation of any two cluster variables is \emph{explicitly} determined by their $\bfg$-vectors. 
-\end{theorem}
-
-The claim in previous statement lays in the word ``explicitly''. 
-Indeed, since cluster variables are parametrized by their $\bfg$-vectors, and since exchange relations are prescribed by the cluster variables involved, it is obvious that the $\bfg$-vectors determines indirectly the coefficients involved. 
-This paper is about giving precise formulas to compute them.
-
-\begin{theorem}
-  Let $\lambda$ and $\mu$ be exchangeable weights. 
-  Then the exponent $\alpha$ in the exchange relation
+  Let $A$ be any finite type \emph{Cartan matrix} and denote by $W=\langle s_1,\dots,s_n\rangle$ the associated \emph{Weyl group} and \emph{simple reflections}.
+  To each \emph{Coxeter element} $c=s_{i_1}\cdots s_{i_n}$ in $W$ we can associate a skew-symmetrizable integer matrix $B_c=(b_{ij})_{i,j\in[1,n]}$ by setting
   \[
-    x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
+    b_{ij}=
+    \begin{cases}
+      -a_{ij} & \text{if } i\prec_c j  \\
+      a_{ij}  & \text{if } j\prec_c i  \\
+      0       & \text{otherwise}
+    \end{cases}
   \]
-  is the unique positive root satisfying both
+  where we write $i\prec_c j$ if and only if $s_i$ precedes $s_j$ in all reduced expressions of $c$.
+  As $c$ varies we get all the possible \emph{acyclic} exchange matrices in any cluster algebra of the same type as $A$.
+  We will denote by $\cA(c)$ (resp. $\cA_0(c)$) the cluster algebra with initial exchange matrix $B_c$ and  \emph{principal} (resp. \emph{without}) \emph{coefficients} at the inital seed.
+
+  Let $\omega_i$ be the i-th \emph{fundamental weight} in the \emph{weight lattice} $P$ of $A$; we will routinely identify $\ZZ^n$ with $P$ by means of the basis of fundamental weights.
+  Let $w_0$ be the longest element of $W$ and denote by $h(i;c)$ the minimum positive integer such that 
   \[
-    -B\alpha = \lambda+\mu-\lambda\uplus_c\mu
+    c^{h(i;c)}\omega_i = w_0\omega_i
   \]
-  and
+  (it is a finite number \cite[Proposition 1.3]{YZ08}).
+  \begin{theorem}[{\cite[Theorem 1.4]{YZ08}}]
+    The cluster variables of $\cA(c)$ are naturally in bijection with the elements of the set
+    \[
+      \Pi(c)
+      :=
+      \left\{
+        c^m\omega_i \, :\, i\in[1,n] \, , \, 0\leq m \leq h(i;c) 
+      \right\}.
+    \]
+    To the cluster variable $x_\lambda$ corresponds its $\bg$-vector $\lambda\in\Pi(c)$.
+  \end{theorem}
+  This correspondence extends to a bijection between points of $P$ and \emph{cluster monomials} of $\cA(c)$ (cf. \cite[Theorem 1.2]{Ste13}); for $\lambda\in P$ we will denote by $x_\lambda$ the cluster monomial whose $\bg$-vector is $\lambda$.
+  In view of the ``separation of additions formula'' we get a similar bijection with cluster monomials in $\cA_0(c)$; we will freely refer to either of the two according to our needs.
+
+  The set $\Pi(c)$ is naturally endowed with a permutation $\tau_c$ defined by
   \[
-    \lambda(\alpha^\vee)  \mu(\alpha^\vee) = -1.
+    \tau_c (\lambda) 
+    :=
+    \begin{cases}
+      \omega_i  & \text{if $\lambda = -\omega_i$} \\
+      c\lambda  & \text{otherwise}
+    \end{cases}
   \]
-\end{theorem}
+  which extends to a piecewise linear map on the whole of $P$.
+  This is a combinatorial shadow of a notable automorphism of $\cA(c)$ sending $x_\lambda$ to $x_{\tau_c(\lambda)}$. 
 
-\section{Proofs}
+  Let $Q$ be the \emph{root lattice} of $A$ with simple roots $\alpha_i$; as for $P$, we will identify $Q$ and $\ZZ^n$ using the basis of simple roots.
+  \begin{definition}
+    The \emph{compatibility degree} $(\bullet||\bullet)_c$ is the unique $\tau_c$-invariant function on pairs of elements of $\Pi(c)$ defined by the initial conditions
+    \[
+      (\omega_i||\lambda)_c
+      :=
+      \left[ (c^{-1}-1)\lambda ; \alpha_i\right]_+
+    \]
+    where $[v,\alpha_i]$ is the coefficient of $\alpha_i$ in $v$ expressed in the basis of simple roots and $[m]_+$  denotes $\max\{m, 0\}$ (cf. \cite[Proposition 5.1]{YZ08}).
+  \end{definition}
+  The name comes from the following important property.
+  \begin{proposition}
+    Two weights $\lambda$ and $\mu$ from $\Pi(c)$ are
+    \begin{itemize}
+      \item
+        \emph{compatible} (i.e. there is a cluster of $\cA(c)$ containing both $x_\lambda$ and $x_\mu$) if and only if
+        \[
+          (\lambda||\mu)_c = 0
+          \quad \quad
+          \text{(equivalently $(\mu||\lambda)_c=0$)}
+        \]
 
-Recall well known fact
-\begin{lemma}
-  Let $B$ be any $n\times n$ acyclic matrix of finite type.
-  If the type of $B$ is not $D_n$, then its kernel has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
-  It the type of $B$ is $D_n$, then its kernel has dimension $2$ if $n$ is even and $1$ if $n$ is odd.
-\end{lemma}
+      \item
+        \emph{exchangeable} (i.e. there are two clusters of $\cA(c)$ that can be obtained from one-another by swapping $x_\lambda$ for $x_\mu$) if and only if
+        \[
+          (\lambda||\mu)_c = 1 = (\mu||\lambda)_c
+        \]
+    \end{itemize}
+  \end{proposition}
 
-Let $V$ be the $n$-dimensional real vector space containing the root system $\Phi$.
-We always write vectors in $V$ in the basis of simple roots $\alpha_i$.
-The \emph{support} of $v\in V$ is the subset $\Supp(v)\subseteq [1,n]$ consisting of all the indices of nonzero coordinates of $v$.
-Such a subset induces a full subdiagram of the Dynkin diagram of $\Phi$; when we talk about the \emph{connected components} of $\Supp(v)$ we refer to the connected components of this subdiagram.
+  Our starting point is the following restatement of \cite[Propositions 5.1 and 5.2]{Ste13}. 
+  \begin{proposition}
+    Suppose $\lambda$ and $\mu$ are exchangeable weights in $\Pi(c)$. 
+    Then the set
+    \[
+      \left\{
+        \tau_c^{-m}\left(\tau_c^m(\lambda)+\tau_c^m(\mu)\right)
+      \right\}_{m\in\ZZ}
+    \]
+    consists precisely of two elements. One of them is $\lambda+\mu$; denote the other by $\lambda\uplus_c\mu$.
+
+    The exchange relation of $x_\lambda$ and $x_\mu$ in $\cA_0(c)$ is then
+    \[
+      x_\lambda x_\mu = x_{\lambda+\mu} + x_{\lambda\uplus_c\mu}.
+    \]
+  \end{proposition}
+
+  Denote by $y_1,\dots,y_n$ the generators of the coefficient semifield of $\cA(c)$ and by $y^\alpha$ the product $\prod_{i=1}^n y_i^{[\alpha;\alpha_i]}$.
+  In view of \cite{NS14}, taking into account that the exchange relations in $\cA(c)$ are homogeneous, we get the following straigthforward corollary.
+  \begin{corollary}
+    The exchange relations in $\cA(c)$ are all of the form 
+    \[
+      x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
+    \]
+    for some exchangeable weights $\lambda$ and $\mu$ and some positive root $\alpha$.
+  \end{corollary}
+
+  We can finally recast \cref{thm:main_vague} into a more precise statement.
+  \begin{theorem}
+    \label{thm:main}
+    Let $\lambda$ and $\mu$ be exchangeable weights. 
+    Then the exponent $\alpha$ in the exchange relation
+    \[
+      x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
+    \]
+    is the unique positive root satisfying both
+    \[
+      -B_c\alpha = \lambda+\mu-\lambda\uplus_c\mu
+    \]
+    and
+    \[
+      \alpha^\vee(\lambda) \alpha^\vee(\mu) = -1.
+    \]
+  \end{theorem}
+  
+  \section{Proofs}
+  
+  Recall well known fact
+  9\begin{lemma}
+    Let $B$ be any $n\times n$ acyclic matrix of finite type.
+    If the type of $B$ is not $D_n$, then its kernel has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
+    It the type of $B$ is $D_n$, then its kernel has dimension $2$ if $n$ is even and $1$ if $n$ is odd.
+  \end{lemma}
+  
+  Let $V$ be the $n$-dimensional real vector space containing the root system $\Phi$.
+  We always write vectors in $V$ in the basis of simple roots $\alpha_i$.
+  The \emph{support} of $v\in V$ is the subset $\Supp(v)\subseteq [1,n]$ consisting of all the indices of nonzero coordinates of $v$.
+  Such a subset induces a full subdiagram of the Dynkin diagram of $\Phi$; when we talk about the \emph{connected components} of $\Supp(v)$ we refer to the connected components of this subdiagram.
 
 % bibliography
 \bibliographystyle{amsalpha}
