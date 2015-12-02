@@ -1,0 +1,13 @@
+*.aux
+*._aux
+*.log
+*._log
+*.out
+*.pdf
+*.synctex.gz
+*.tex.project.vim
+*.toc
+*.bbl
+*.blg
+._*
+.*.swp

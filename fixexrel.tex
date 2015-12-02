@@ -1,0 +1,106 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1in, marginparwidth=0.8in]{geometry}
+\usepackage[colorlinks,
+            linkcolor=black!50!red,
+            citecolor=blue,
+            pdfpagemode=None]{hyperref}
+\usepackage{cleveref}
+
+\usepackage[draft]{say}
+\newcommand{\saySS}[1]{\say[SS]{#1}}
+
+% shorthands 
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\cAb}{\mathcal{A}_\bullet}
+\newcommand{\Supp}{\operatorname{Supp}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfc}{\mathbf{c}}
+
+% ambients and numbering
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+
+\begin{document}
+\title[Exchange relations for finite type]{Exchange relations for finitie type cluster algebras with acyclic initial seed and principal coefficients}
+
+\author[Felikson]{Anna Felikson}
+\address[Anna Felikson]{Durham University}
+\email{email-here}
+
+\author[Reading]{Nathan Reading}
+\address[Nathan Reading]{North Carolina State Univesity}
+\email{email-here}
+
+\author[Stella]{Salvatore Stella}
+\address[Salvatore Stella]{IN$d$AM - Marie Curie Actions fellow, Universit\`a\`{ }La Sapienza'', Roma, Italy.}
+\email{stella@mat.uniroma1.it}
+
+\author[tumarkin]{Pavel Tumarkin}
+\address[Pavel Tumarkin]{Durham University}
+\email{email-here}
+
+\begin{abstract}
+We give explicit description of all the exchange relations for finitie type cluster algebras with acyclic initial seed and principal coefficients.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+In \cite{Ste13} the third author gave a formula for all the exchange relations in any finite type acyclic cluster algebra without coefficients.
+This formula required only to know the initial exchange matrix, or rather the \emph{Coxeter element} naturally associated to it, and the \emph{$\bfg$-vectors} of the two cluster variables involved.
+Our goal here is to improve on this result to include principal coefficients.
+
+Let $B$ be any finite type acyclic 
+
+\begin{theorem}
+  In any cluster algebra of finite type with principal coefficients at an acyclic initial seed the coefficient appearing in the exchange relation of any two cluster variables is \emph{explicitly} determined by their $\bfg$-vectors. 
+\end{theorem}
+
+The claim in previous statement lays in the word ``explicitly''. 
+Indeed, since cluster variables are parametrized by their $\bfg$-vectors, and since exchange relations are prescribed by the cluster variables involved, it is obvious that the $\bfg$-vectors determines indirectly the coefficients involved. 
+This paper is about giving precise formulas to compute them.
+
+\begin{theorem}
+  Let $\lambda$ and $\mu$ be exchangeable weights. 
+  Then the exponent $\alpha$ in the exchange relation
+  \[
+    x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
+  \]
+  is the unique positive root satisfying both
+  \[
+    -B\alpha = \lambda+\mu-\lambda\uplus_c\mu
+  \]
+  and
+  \[
+    \lambda(\alpha^\vee)  \mu(\alpha^\vee) = -1.
+  \]
+\end{theorem}
+
+\section{Proofs}
+
+Recall well known fact
+\begin{lemma}
+  Let $B$ be any $n\times n$ acyclic matrix of finite type.
+  If the type of $B$ is not $D_n$, then its kernel has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
+  It the type of $B$ is $D_n$, then its kernel has dimension $2$ if $n$ is even and $1$ if $n$ is odd.
+\end{lemma}
+
+Let $V$ be the $n$-dimensional real vector space containing the root system $\Phi$.
+We always write vectors in $V$ in the basis of simple roots $\alpha_i$.
+The \emph{support} of $v\in V$ is the subset $\Supp(v)\subseteq [1,n]$ consisting of all the indices of nonzero coordinates of $v$.
+Such a subset induces a full subdiagram of the Dynkin diagram of $\Phi$; when we talk about the \emph{connected components} of $\Supp(v)$ we refer to the connected components of this subdiagram.
+
+% bibliography
+\bibliographystyle{amsalpha}
+\bibliography{bibliography}
+
+\end{document}
