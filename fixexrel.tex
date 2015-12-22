@@ -2,6 +2,7 @@
 \usepackage[margin=1in, marginparwidth=0.8in]{geometry}
 \usepackage[colorlinks,linkcolor=black!50!red,citecolor=blue,pdfpagemode=None]{hyperref}
 \usepackage[capitalise]{cleveref}
+\usepackage{graphicx}
 
 \usepackage[draft]{say}
 \newcommand{\saySS}[1]{\say[SS]{#1}}
@@ -241,7 +242,7 @@ We give an explicit description of all the exchange relations for finitie type c
   \begin{remark}
     A careful reader may observe that \cref{lem:dimensions} could be used to establish \cref{thm:main} directly in all finite types with the exception of $D_n$. 
     Indeed it would be enough to extend any $2k+1 \times 2k+1$ exchange matrix to a $2k+2\times2k+2$ exchange matrix of the same type and deduce the required property from the resulting algebra embedding.
-    Instead, we prefer to give a more explicit argument that will simplify the analisys in type $D_n$ as well.
+    Instead, we prefer to give a more explicit argument that will simplify the analysis in type $D_n$ as well.
   \end{remark}
 
   To deal with the remaining infinite families we compute explicit generators for the kernel of $B_c$. 
@@ -324,6 +325,14 @@ We give an explicit description of all the exchange relations for finitie type c
 
   To conclude the proof of \cref{thm:main} it suffices to show that, in type $D_n$, whenever \cref{eq:system} is satisfied by two roots only one of them verifies \cref{eq:dual} as well.  
   We do so using surfaces.
+  \begin{figure}
+    \label{fig:D_n-c_vectors}
+    \begin{center}
+      \includegraphics[scale=0.7]{D_n.eps}
+    \end{center}
+    \caption{Ambiguous quadrilateral for $D_n$.}
+  \end{figure}
+
 
 % bibliography
 \bibliographystyle{amsalpha}
