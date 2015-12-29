@@ -314,6 +314,7 @@ We give an explicit description of all the exchange relations for finitie type c
   This concludes the proof of \cref{thm:main} for types $A_n$, $B_n$ and $C_n$.
 
   \begin{corollary}
+    \label{cor:kernel-Dn}
     Suppose the type of $A$ is $D_n$ and $n\geq 5$. 
     If \cref{eq:system} has more then one solution among the positive roots of $A$ than it has precisely two.
     Their difference is in the span of either one of $\alpha_{n-1}\pm\alpha_n$ depending on the relative order of $s_{n-2}$,$s_{n-1}$, and $s_n$ in $c$.
@@ -324,19 +325,34 @@ We give an explicit description of all the exchange relations for finitie type c
   \end{proof}
 
   To conclude the proof of \cref{thm:main} it suffices to show that, in type $D_n$, whenever \cref{eq:system} is satisfied by two roots only one of them verifies \cref{eq:dual} as well.  
-  We do so using surfaces.
+  We will do so using the surface realization of cluster algebras introduced in \cite{FST08,FT12}. 
+  The reader not familiar with the relevant terminology can find a simplified summary (sufficient for the case at hand) in the beginning of \cite[Section 4.1]{NS14}.
 
-  Recall basic notions from \cite{FST,FT}
+  By reflecting our punctured disk, if necessary, we can always assume that $n-2 \prec_c n-1$; it will therefore suffices to consider only two cases: either $n-2 \prec_c n$, or $n \prec_c n-2$.
+  \saySS{A more general remark is that passing from $c$ to $c^{-1}$ changes $\bg$-vectors to their negatives and preserves the set of $\bc$-vectors; should we state this at the beginning of the paper?}
 
   \begin{lemma}
-    The only cases in which \cref{eq:system} is satisfied by two positive roots involve the exchange of a radius with a chord
+    In all the cases in which \cref{eq:system} is satisfied by two distinct positive roots at least one of $x_\lambda$ and $x_\mu$ corresponds to a radius.
   \end{lemma}
+  \begin{proof}
+    It suffices to show that any quadrilateral whose diagonal are both chords cannot yield the desired exchange relation.
+    Suppose at first that $n-2 \prec_c n$ and let $\alpha$ be one of the two positive roots solutions of \cref{eq:system}.
+    By \cref{cor:kernel-Dn}, exactly one among the $(n-1)$-st and the $n$-th coordinate of $\alpha$ is $0$; the other is $1$.
+    In particular any quadrilateral supporting this exchange relations must give different shear coordinates to the $(n-1)$-st and $n$-th elementary lamination.
+    But a quadrilateral whose diagonals are both chords assign either $1$ or $0$ to both simultaneously.
+
+    Suppose now that $n \prec_c n-2$ and let $\alpha$ be again one of the two positive roots solution of \cref{eq:system}.
+    Since one of $\alpha\pm(\alpha_{n-1}+\alpha_n)$ is also a root the $(n-2)$-nd coordinate of $\alpha$ is $1$ while both the $(n-1)$-st and $n$-th coordinates are simultaneously $1$ or $0$.
+    But a quadrilateral whose diagonals are both chords, if it gives shear coordinate $1$ to both the $(n-1)$-st and $n$-th elementary lamination, then it assign $2$ to the $(n-2)$-nd elementary lamination.
+    If instead it gives shear coordinate $0$ to both $(n-1)$-st and $n$-th elementary lamination, then it also gives $0$ to the $(n-2)$-nd elementary lamination.
+  \end{proof}
+
   \begin{figure}
     \label{fig:D_n-c_vectors}
     \begin{center}
       \includegraphics[scale=0.7]{D_n.eps}
     \end{center}
-    \caption{Ambiguous quadrilateral for $D_n$.}
+    \caption{ $D_n$.}
   \end{figure}
 
 
