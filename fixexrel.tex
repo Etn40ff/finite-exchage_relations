@@ -56,7 +56,7 @@ We give an explicit description of all the exchange relations for finite type cl
 
 \section{Introduction}
   In \cite{Ste13} the third author gave a formula for all the exchange relations in any finite type acyclic cluster algebra without coefficients.
-  \saySS{Change this is Nathan decides not to participate.}
+  \saySS{Change this if Nathan decides not to participate.}
   Our main theorem here improves on this result to deal with principal coefficients.
   
   \begin{theorem}
@@ -64,8 +64,11 @@ We give an explicit description of all the exchange relations for finite type cl
     In any cluster algebra of finite type with principal coefficients at an acyclic initial seed, the coefficient appearing in the exchange relation of any two exchangeable cluster variables is \emph{explicitly} determined by their $\bg$-vectors. 
   \end{theorem}
   \saySS{I am not sure it is worth to state this as a theorem; as is it makes much easier to restate the result later but it is extremely imprecise to call it a theorem.}
+  \say[NR]{My vote (and it's going to end up that I don't have a vote) is not to state it as a theorem.  This is a variation that I haven't seen yet, but it reminds me of something that I've seen in a few papers that drives me crazy:  "Theorem: there exists an explicit bijection between BLAH1 and BLAH2."  Usually that happens when we already knew the counts were equal, and I think that statement is essentially meaningless.  The right thing is to define a map and say "Theorem:  My map is a bijection."  In this case, I think the right thing to do is \cref{thm:main} (possibly modulo some suggestions below.)}
   
-  The claim in the previous statement lays in the word ``explicitly''. 
+  
+  The claim in the previous statement lies \say[NR]{Changed "lays" to "lies".  This is confusing even for native English speakers, but "lies" is correct here.}
+   in the word ``explicitly''. 
   Indeed, since cluster variables are parametrized by their $\bg$-vectors, and since exchange relations are prescribed by the cluster variables involved, it is obvious that the $\bg$-vectors determines indirectly the coefficients. 
   This note is about giving precise formulas to compute them.
  
@@ -83,7 +86,8 @@ We give an explicit description of all the exchange relations for finite type cl
   \]
   where we write $i\prec_c j$ if and only if $s_i$ precedes $s_j$ in all reduced expressions of $c$.
   As $c$ varies we get all the possible \emph{acyclic} exchange matrices in any cluster algebra of the same type as $A$.
-  We will denote by $\cA(c)$ (resp. $\cA_0(c)$) the cluster algebra with initial exchange matrix $B_c$ and  \emph{principal} (resp. \emph{without}) \emph{coefficients} at the initial seed.
+  We will denote by $\cA(c)$ \say[NR]{You probably want $\cA_\bullet(c)$ here?} 
+   (resp. $\cA_0(c)$) the cluster algebra with initial exchange matrix $B_c$ and  \emph{principal} (resp. \emph{without}) \emph{coefficients} at the initial seed.
 
   The algebra $\cA(c)$ is $\ZZ^n$-graded; its cluster variables and cluster monomials are homogeneous elements and their \emph{$\bg$-vector} is their homogeneous degree.
   Let $\omega_i$ be the i-th \emph{fundamental weight} in the \emph{weight lattice} $P$ of $A$; we will routinely interpret $\bg$-vectors as weights by writing them in the basis of fundamental weights.
@@ -130,7 +134,7 @@ We give an explicit description of all the exchange relations for finite type cl
     where, for $v$ in $Q$, $[v;\alpha_i]$ denotes the $i$-th coefficient of $v$  and $[m]_+$ is a shorthand for $\max\{m, 0\}$ (cf. \cite[Proposition 5.1]{YZ08}).
   \end{definition}
   The name comes from the following important property.
-  \begin{proposition}
+  \begin{proposition}\say[NR]{This theorem should be cited to a specific result (if possible---this kind of statement has been really hard for me to track down in the past!}
     Two weights $\lambda$ and $\mu$ from $\Pi(c)$ are
     \begin{itemize}
       \item
@@ -148,6 +152,19 @@ We give an explicit description of all the exchange relations for finite type cl
         \]
     \end{itemize}
   \end{proposition}
+
+\say[NR]{Some thoughts on how to sell this:  
+\cref{thm:main} sounds less cool than it is because you already stated \cref{prop:coeff-free,cor:A0}.
+How about this:  State the coolest possible theorem all at once, and then mention that parts of it already appeared and say what is the new piece.
+So, that would mean:
+First state the piece of \cref{prop:coeff-free} that defines $\uplus$.
+Then state a theorem that says given exchangeable weights, the exchange relation is BLAH where $\alpha$ is BLAH.
+THEN, point out that your previous awesome result showed that the coefficient-free exchange relations were of a certain form.
+Depending on how much you want to sound like you're giving a history, you might even say how everyone you told this to asked about exchange relations.
+In any case, you could say that coefficient-free exchange relations were your other result (quoted right now as the other half of \cref{prop:coeff-free} and that the $y^\alpha$ thing was also immediate corollary of your awesome result.
+Determining the $\alpha$ uniquely was hard!  (I remember hearing about it!)
+}
+
 
   Our starting point is the following restatement of \cite[Propositions 5.1 and 5.2]{Ste13}. 
   \begin{proposition}
@@ -170,7 +187,7 @@ We give an explicit description of all the exchange relations for finite type cl
 
   Denote by $y_1,\dots,y_n$ the generators of the coefficient semifield of $\cA(c)$ and by $y^\alpha$ the product $\prod_{i=1}^n y_i^{[\alpha;\alpha_i]}$.
   In view of \cite{NS14}, taking into account that the exchange relations in $\cA(c)$ are homogeneous, we get the following straightforward corollary.
-  \begin{corollary}
+  \begin{corollary}\label{cor:A0}
     The exchange relations in $\cA(c)$ are all of the form 
     \[
       x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
@@ -323,7 +340,7 @@ We give an explicit description of all the exchange relations for finite type cl
   \begin{corollary}
     \label{cor:kernel-Dn}
     Suppose the type of $A$ is $D_n$ and $n\geq 5$. 
-    If \cref{eq:system} has more then one solution among the positive roots of $A$ than it has precisely two.
+    If \cref{eq:system} has more than one solution among the positive roots of $A$ then it has precisely two. \say[N]{fixed "then" and "than"}
     Their difference is in the span of either one of $\alpha_{n-1}\pm\alpha_n$ depending on the relative order of $s_{n-2}$,$s_{n-1}$, and $s_n$ in $c$.
   \end{corollary}
   \begin{proof}
@@ -375,7 +392,8 @@ We give an explicit description of all the exchange relations for finite type cl
   \begin{proof}
     \cite{FST08,FT12} do not contain an explicit recipe to compute the $\bg$-vector of the cluster variable associated to an arc.
     An easy rule, though, can be obtained using \cite[Eq. (1.13)]{NZ11}: it suffices to reflect our surface and compute the shear coordinates of the elementary lamination corresponding to the desired arc with respect to the initial triangulation.
-    \saySS{Pavel you said that this is written already somewhere, do you have a reference to add here?}
+    \saySS{\label{note}Pavel you said that this is written already somewhere, do you have a reference to add here?}
+\say[NR]{About Note~\ref{note}, you can find this, said another way, as Proposition 5.2 of my paper "Universal geometric cluster algebras from surfaces" but it wouldn't surprise me if someone else wrote it down earlier. }
     \saySS{We do not care much about spiralling directions because we only care about the absolute value of the coordinates; it might be a good idea though to check that \cite{NZ11} gives plays nicely with our conventions.}
     Since we only care for the last two entries it will suffices to look inside the unique digon in the initial triangulation.
     We are in the situation depicted in \cref{fig:D_n-weights}.
@@ -414,8 +432,9 @@ We give an explicit description of all the exchange relations for finite type cl
   \begin{remark}
     A modified version of \cref{prop:coeff-free} holds in affine types as well.
     \saySS{@Nathan: should we mention more explicitly our work in progress on this?}
+    \say[NR]{Feel free to say as much as we know if you think it fits in.}
     We expect \cref{thm:main} to hold there too.
-    The analisys required to establish it, though, could be much more complicated than the finite case one because the corank of $B_c$ can be as big as $4$ and the argument of \cref{rk:induction} does not apply.
+    The analysis required to establish it, though, could be much more complicated than the finite case one because the corank of $B_c$ can be as big as $4$ and the argument of \cref{rk:induction} does not apply.
   \end{remark}
 
 % bibliography
