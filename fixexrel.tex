@@ -30,18 +30,14 @@
 \numberwithin{figure}{section}
 
 \begin{document}
-\title[Exchange relations for finite type]{Exchange relations for finitie type cluster algebras with acyclic initial seed and principal coefficients}
+\title[Exchange relations for finite type]{Exchange relations for finite type cluster algebras with acyclic initial seed and principal coefficients}
 
 \author[Felikson]{Anna Felikson}
 \address[Anna Felikson]{Durham University}
 \email{email-here}
 
-\author[Reading]{Nathan Reading}
-\address[Nathan Reading]{North Carolina State Univesity}
-\email{email-here}
-
 \author[Stella]{Salvatore Stella}
-\address[Salvatore Stella]{IN$d$AM - Marie Curie Actions fellow, Universit\`a\`{ }La Sapienza'', Roma, Italy.}
+\address[Salvatore Stella]{IN$d$AM - Marie Curie Actions fellow, Universit\`a ``La Sapienza'', Roma, Italy.}
 \email{stella@mat.uniroma1.it}
 
 \author[tumarkin]{Pavel Tumarkin}
@@ -49,30 +45,26 @@
 \email{email-here}
 
 \begin{abstract}
-We give an explicit description of all the exchange relations for finite type cluster algebras with acyclic initial seed and principal coefficients.
+We give an explicit description of all the exchange relations in any finite type cluster algebra with acyclic initial seed and principal coefficients.
 \end{abstract}
 
 \maketitle
 
 \section{Introduction}
-  In \cite{Ste13} the third author gave a formula for all the exchange relations in any finite type acyclic cluster algebra without coefficients.
-  \saySS{Change this if Nathan decides not to participate.}
-  Our main theorem here improves on this result to deal with principal coefficients.
+  Given two cluster variables in a cluster algebra, deciding whether they belong to the same cluster or if they can be obtained from one another by a single mutation is, in general, an hard problem to address.
+  In some special situations though, when suitable combinatorial models exist, such questions become much easier to decide.
+  This is the case, for example, of cluster algebras of finite type with an acyclic initial seed where the answer is given using the \emph{compatibility degree} of the corresponding \emph{$\bg$-vectors}.
   
-  \begin{theorem}
-    \label{thm:main_vague}
-    In any cluster algebra of finite type with principal coefficients at an acyclic initial seed, the coefficient appearing in the exchange relation of any two exchangeable cluster variables is \emph{explicitly} determined by their $\bg$-vectors. 
-  \end{theorem}
-  \saySS{I am not sure it is worth to state this as a theorem; as is it makes much easier to restate the result later but it is extremely imprecise to call it a theorem.}
-  \say[NR]{My vote (and it's going to end up that I don't have a vote) is not to state it as a theorem.  This is a variation that I haven't seen yet, but it reminds me of something that I've seen in a few papers that drives me crazy:  "Theorem: there exists an explicit bijection between BLAH1 and BLAH2."  Usually that happens when we already knew the counts were equal, and I think that statement is essentially meaningless.  The right thing is to define a map and say "Theorem:  My map is a bijection."  In this case, I think the right thing to do is \cref{thm:main} (possibly modulo some suggestions below.)}
-  
-  
-  The claim in the previous statement lies \say[NR]{Changed "lays" to "lies".  This is confusing even for native English speakers, but "lies" is correct here.}
-   in the word ``explicitly''. 
-  Indeed, since cluster variables are parametrized by their $\bg$-vectors, and since exchange relations are prescribed by the cluster variables involved, it is obvious that the $\bg$-vectors determines indirectly the coefficients. 
-  This note is about giving precise formulas to compute them.
- 
-  In order to make \cref{thm:main_vague} more precise we need to recall few notions and results from \cite{Ste13,YZ08}.
+  Knowing that two cluster variables are exchangeable naturally arises the problem of producing the exchange relation they satisfy.
+  There are two partial answers to this question when the algebra is of finite type and has an acyclic initial seed. 
+  In \cite{YZ08}, using some determinantal identities on the associated Lie group, the authors were able to give explicit formulas for all the \emph{primitive} exchange relations (i.e. those in which cluster variables only appear in one of the two monomials of the right hand side). 
+  Their recipe works for principal coefficients and hence, via separation of additions, for any choice of coefficients.
+
+  In \cite{Ste13} the second author gave a uniform formula for all the exchange relations, albeit only in the coefficient-free case.
+  Our main theorem here improves on this result to deal with principal coefficients as well.
+
+  Namely, given any two exchangeable cluster variables in a finite type cluster algebra with acyclic initial seed and principal coefficients, we give an explicit formula for computing their exchange relation.
+ In order to make this statement more precise we need to recall few notions and results from \cite{Ste13,YZ08}.
 
   Let $A$ be any finite type \emph{Cartan matrix} and denote by $W=\langle s_1,\dots,s_n\rangle$ the associated \emph{Weyl group} and \emph{simple reflections}.
   To each \emph{Coxeter element} $c=s_{i_1}\cdots s_{i_n}$ in $W$ we can associate a skew-symmetrizable integer matrix $B_c=(b_{ij})_{i,j\in[1,n]}$ by setting
@@ -86,8 +78,10 @@ We give an explicit description of all the exchange relations for finite type cl
   \]
   where we write $i\prec_c j$ if and only if $s_i$ precedes $s_j$ in all reduced expressions of $c$.
   As $c$ varies we get all the possible \emph{acyclic} exchange matrices in any cluster algebra of the same type as $A$.
-  We will denote by $\cA(c)$ \say[NR]{You probably want $\cA_\bullet(c)$ here?} 
-   (resp. $\cA_0(c)$) the cluster algebra with initial exchange matrix $B_c$ and  \emph{principal} (resp. \emph{without}) \emph{coefficients} at the initial seed.
+  We will denote by $\cA(c)$ 
+  \say[NR]{You probably want $\cA_\bullet(c)$ here?} 
+  \saySS{Not sure, if I am not mistaken \cite{YZ08} uses this notation. Anyone has a preference? I prefer $\cA_\bullet(c)$} 
+  the cluster algebra with initial exchange matrix $B_c$ and  \emph{principal coefficients} at the initial seed.
 
   The algebra $\cA(c)$ is $\ZZ^n$-graded; its cluster variables and cluster monomials are homogeneous elements and their \emph{$\bg$-vector} is their homogeneous degree.
   Let $\omega_i$ be the i-th \emph{fundamental weight} in the \emph{weight lattice} $P$ of $A$; we will routinely interpret $\bg$-vectors as weights by writing them in the basis of fundamental weights.
@@ -109,7 +103,6 @@ We give an explicit description of all the exchange relations for finite type cl
     To the cluster variable $x_\lambda$ it corresponds its $\bg$-vector $\lambda\in\Pi(c)$.
   \end{theorem}
   This correspondence extends to a bijection between points of $P$ and \emph{cluster monomials} of $\cA(c)$ (cf. \cite[Theorem 1.2]{Ste13}); for $\lambda\in P$ we will denote by $x_\lambda$ the cluster monomial whose $\bg$-vector is $\lambda$.
-  In view of the ``separation of additions formula'' we get a similar bijection with cluster monomials in $\cA_0(c)$; we will freely refer to either of the two according to our needs.
 
   The set $\Pi(c)$ is naturally endowed with a permutation $\tau_c$ defined by
   \[
@@ -121,7 +114,7 @@ We give an explicit description of all the exchange relations for finite type cl
     \end{cases}
   \]
   which extends to a piecewise linear map on the whole of $P$ that is ``compatible'' with the cluster structure of $\cA(c)$.
-  This is a combinatorial shadow of a notable automorphism of $\cA_0(c)$ sending the cluster variable $x_\lambda$ to $x_{\tau_c(\lambda)}$. 
+  This is a combinatorial shadow of a notable automorphism of the coefficient-free conterpart of $\cA(c)$ sending the cluster variable $x_\lambda$ to $x_{\tau_c(\lambda)}$. 
 
   Let $Q$ be the \emph{root lattice} of $A$ with simple roots $\alpha_i$; as for $P$, we will routinely think of elements in $Q$ as integer vectors using the basis of simple roots.
   \begin{definition}
@@ -133,8 +126,10 @@ We give an explicit description of all the exchange relations for finite type cl
     \]
     where, for $v$ in $Q$, $[v;\alpha_i]$ denotes the $i$-th coefficient of $v$  and $[m]_+$ is a shorthand for $\max\{m, 0\}$ (cf. \cite[Proposition 5.1]{YZ08}).
   \end{definition}
-  The name comes from the following important property.
-  \begin{proposition}\say[NR]{This theorem should be cited to a specific result (if possible---this kind of statement has been really hard for me to track down in the past!}
+  The name comes from the following important property, consequence of the polytopal realization of the cluster fan of $\cA(c)$ (\cite{CFZ02,Ste13}).
+  \begin{proposition}
+    \say[NR]{This theorem should be cited to a specific result (if possible---this kind of statement has been really hard for me to track down in the past!}
+    \saySS{My bad: this proposition follows basically from how you prove the main theorem in \cite{Ste13}; unfortunately I was too dumb at the time to realize that this was going to be important and I did not state it in any quotable manner there. To my defence I can only say that even in \cite{CFZ02} they do not give a quotable statement.}
     Two weights $\lambda$ and $\mu$ from $\Pi(c)$ are
     \begin{itemize}
       \item
@@ -153,22 +148,8 @@ We give an explicit description of all the exchange relations for finite type cl
     \end{itemize}
   \end{proposition}
 
-\say[NR]{Some thoughts on how to sell this:  
-\cref{thm:main} sounds less cool than it is because you already stated \cref{prop:coeff-free,cor:A0}.
-How about this:  State the coolest possible theorem all at once, and then mention that parts of it already appeared and say what is the new piece.
-So, that would mean:
-First state the piece of \cref{prop:coeff-free} that defines $\uplus$.
-Then state a theorem that says given exchangeable weights, the exchange relation is BLAH where $\alpha$ is BLAH.
-THEN, point out that your previous awesome result showed that the coefficient-free exchange relations were of a certain form.
-Depending on how much you want to sound like you're giving a history, you might even say how everyone you told this to asked about exchange relations.
-In any case, you could say that coefficient-free exchange relations were your other result (quoted right now as the other half of \cref{prop:coeff-free} and that the $y^\alpha$ thing was also immediate corollary of your awesome result.
-Determining the $\alpha$ uniquely was hard!  (I remember hearing about it!)
-}
-
-
-  Our starting point is the following restatement of \cite[Propositions 5.1 and 5.2]{Ste13}. 
+  Our starting point is the following restatement of \cite[Proposition 5.1]{Ste13}. 
   \begin{proposition}
-    \label{prop:coeff-free}
     Suppose $\lambda$ and $\mu$ are exchangeable weights in $\Pi(c)$. 
     Then the set
     \[
@@ -178,32 +159,18 @@ Determining the $\alpha$ uniquely was hard!  (I remember hearing about it!)
     \]
     consists precisely of two weights. 
     One of them is $\lambda+\mu$; denote the other by $\lambda\uplus_c\mu$.
-
-    The exchange relation of $x_\lambda$ and $x_\mu$ in $\cA_0(c)$ is then
-    \[
-      x_\lambda x_\mu = x_{\lambda+\mu} + x_{\lambda\uplus_c\mu}.
-    \]
   \end{proposition}
 
-  Denote by $y_1,\dots,y_n$ the generators of the coefficient semifield of $\cA(c)$ and by $y^\alpha$ the product $\prod_{i=1}^n y_i^{[\alpha;\alpha_i]}$.
-  In view of \cite{NS14}, taking into account that the exchange relations in $\cA(c)$ are homogeneous, we get the following straightforward corollary.
-  \begin{corollary}\label{cor:A0}
-    The exchange relations in $\cA(c)$ are all of the form 
-    \[
-      x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
-    \]
-    for some exchangeable weights $\lambda$ and $\mu$ and some positive root $\alpha$.
-  \end{corollary}
-
-  We can finally recast \cref{thm:main_vague} into a more precise statement.
+  Let $y_1,\dots,y_n$ be the generators of the coefficient semifield of $\cA(c)$ and denote by $y^\alpha$ the product $\prod_{i=1}^n y_i^{[\alpha;\alpha_i]}$.
   \begin{theorem}
     \label{thm:main}
-    Let $\lambda$ and $\mu$ be exchangeable weights. 
-    Then the exponent $\alpha$ in the exchange relation
-    \[
+    Suppose $\lambda$ and $\mu$ are exchangeable weights in $\Pi(c)$. 
+    Then the cluster variables $x_\lambda$ and $x_\mu$ in $\cA(c)$ satisfy the exchange relation
+    \begin{equation}
+      \label{eq:exrel}
       x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
-    \]
-    is the unique positive root satisfying both
+    \end{equation}
+    where $\alpha$ is the unique positive root in the root system of $A$ such that
     \begin{equation}
       \label{eq:system}
       -B_c\alpha = \lambda+\mu-\lambda\uplus_c\mu
@@ -213,11 +180,15 @@ Determining the $\alpha$ uniquely was hard!  (I remember hearing about it!)
       \label{eq:dual}
       \langle\lambda,\alpha^\vee\rangle 
       \langle\mu,\alpha^\vee\rangle 
-      = -1
+      = -1.
     \end{equation}
-    where $\alpha^\vee$ is the \emph{coroot} corresponding to $\alpha$ and $\langle\bullet,\bullet\rangle$ is the pairing of dual vector spaces.
+    (Here $\alpha^\vee$ denotes the \emph{coroot} corresponding to $\alpha$ while $\langle\bullet,\bullet\rangle$ is the pairing of dual vector spaces.)
   \end{theorem}
-  Observe that the two conditions of the theorem are necessary. 
+
+  Note that the shape of \cref{eq:exrel} follows imediately form the coefficient-free case \cite[Proposition 5.2]{Ste13} together with the observations that $\bc$-vectors are roots in the root system of $A$ (cf. \cite{NS14})  and that the exchange relations in $\cA(c)$ are homogeneous.
+  The real content of our theorem are therefore the explicit conditions that determine $\alpha$. 
+  They are clearly both necessary.
+
   Indeed \cref{eq:system} is just a restatement of the fact that the exchange relations in $\cA(c)$ are homogeneous and that the degree of $y_i$ is $-\bb_i$ (the negative of the i-th column of $B_c$).
   \cref{eq:dual}, instead, follows immediately from \cite[Eq. (1.11)]{NZ11} once we interpret $\bg$-vectors as weights and $\bc$-vectors as roots together with the observation that, when mutating in direction $k$, the $k$-th $\bc$-vector changes into its negative.
   
@@ -225,7 +196,8 @@ Determining the $\alpha$ uniquely was hard!  (I remember hearing about it!)
   None the less, thanks to the fact that we are dealing with positive roots, we will see that it is still enough in every case except in type $D_n$.
   
   \subsection*{Acknowledgments}
-  \saySS{Write something about the Grey fellowship here.}
+  This paper was completed during a visit to Durham University; the second author would like to thank both Grey College and the Department of Mathematics for the hospitality received.
+  We are also grateful to Nathan Reading for many fruitful discussions, for his help with some hearly attempts at \cref{thm:main}, and for his comments on a preliminary version of this paper.
   
 \section{Proof of \cref{thm:main}}
   Recall the notation for $A$, $c$ and $B_c$ from the introduction. 
@@ -340,7 +312,7 @@ Determining the $\alpha$ uniquely was hard!  (I remember hearing about it!)
   \begin{corollary}
     \label{cor:kernel-Dn}
     Suppose the type of $A$ is $D_n$ and $n\geq 5$. 
-    If \cref{eq:system} has more than one solution among the positive roots of $A$ then it has precisely two. \say[N]{fixed "then" and "than"}
+    If \cref{eq:system} has more than one solution among the positive roots of $A$ then it has precisely two.
     Their difference is in the span of either one of $\alpha_{n-1}\pm\alpha_n$ depending on the relative order of $s_{n-2}$,$s_{n-1}$, and $s_n$ in $c$.
   \end{corollary}
   \begin{proof}
@@ -430,11 +402,9 @@ Determining the $\alpha$ uniquely was hard!  (I remember hearing about it!)
   Therefore, since the pairing $\langle\bullet,\bullet\rangle$ is integer-valued when computed on (co-)roots and weights, $\alpha$ and $\alpha'$ cannot both satisfy \cref{eq:dual}.
 
   \begin{remark}
-    A modified version of \cref{prop:coeff-free} holds in affine types as well.
-    \saySS{@Nathan: should we mention more explicitly our work in progress on this?}
-    \say[NR]{Feel free to say as much as we know if you think it fits in.}
-    We expect \cref{thm:main} to hold there too.
-    The analysis required to establish it, though, could be much more complicated than the finite case one because the corank of $B_c$ can be as big as $4$ and the argument of \cref{rk:induction} does not apply.
+    In view of some ongoing work of the second author with Nathan Reading it appears that a modified version of \cite[Propositions 5.1 and 5.2]{Ste13} holds in affine types as well.
+    We expect that \cref{thm:main}, or a refined version of it, could hold there too.
+    The analysis required to establish it, though, will probably be more complicated than the finite case one because the corank of $B_c$ can be as big as $4$ and the argument of \cref{rk:induction} does not apply.
   \end{remark}
 
 % bibliography
