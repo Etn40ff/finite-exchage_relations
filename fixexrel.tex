@@ -16,16 +16,19 @@
 \newcommand{\bg}{\mathbf{g}}
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bb}{\mathbf{b}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\A}{{M}}
 
 % ambients and numbering
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{definition}[theorem]{Definition}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{example}[theorem]{Example}
+\theoremstyle{definition}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
 \numberwithin{equation}{section}
 \numberwithin{figure}{section}
 
@@ -37,8 +40,8 @@
 \email{stella@mat.uniroma1.it}
 
 \author[tumarkin]{Pavel Tumarkin}
-\address[Pavel Tumarkin]{Durham University}
-\email{email-here}
+\address[Pavel Tumarkin]{Department of Mathematical Sciences, Durham University, UK}
+\email{pavel.tumarkin@durham.ac.uk}
 
 \begin{abstract}
 We give an explicit description of all the exchange relations in any finite type cluster algebra with acyclic initial seed and principal coefficients.
@@ -46,23 +49,26 @@ We give an explicit description of all the exchange relations in any finite type
 
 \maketitle
 
-\section{Introduction}
-  Given two cluster variables in a cluster algebra, deciding whether they belong to the same cluster or if they can be obtained from one another by a single mutation is, in general, an hard problem to address.
+\section{Introduction and main results}
+\say[PT]{}
+Cluster algebras were first introduced by Fomin and Zelevinsky~\cite{FZ02}. A cluster algebra is a commutative ring with a distinguished set of generators called {\em cluster variables}. Cluster variables are grouped into overlapping finite collections of the same cardinality called {\em clusters} connected by local transition rules called {\em mutations} determined by a skew-symmetrizable {\em exchange matrix} associated with each cluster. In~\cite{FZ03}, Fomin and Zelevinsky provide a classification of cluster algebras {\em of finite type}, i.e. containing a finite number of cluster variables only: they show that these cluster algebras are classified by Dynkin diagrams, and there is one-to-one correspondence between cluster variables on one side, and positive roots and negatives of simple roots on the other side. 
+
+Given two cluster variables in a cluster algebra, deciding whether they belong to the same cluster or if they can be obtained from one another by a single mutation is, in general, a hard problem to address.
   In some special situations though, when suitable combinatorial models exist, such questions become much easier to decide.
   This is the case, for example, of cluster algebras of finite type with an acyclic initial seed where the answer is given using the \emph{compatibility degree} of the corresponding \emph{$\bg$-vectors}.
   
-  Knowing that two cluster variables are exchangeable naturally arises the problem of producing the exchange relation they satisfy.
+Knowing that two cluster variables are exchangeable naturally arises the problem of producing the exchange relation they satisfy. 
   There are two partial answers to this question when the algebra is of finite type and has an acyclic initial seed. 
   In \cite{YZ08}, using some determinantal identities on the associated Lie group, the authors were able to give explicit formulas for all the \emph{primitive} exchange relations (i.e. those in which cluster variables only appear in one of the two monomials of the right hand side). 
   Their recipe works for principal coefficients and hence, via separation of additions, for any choice of coefficients.
 
-  In \cite{Ste13} the first author gave a uniform formula for all the exchange relations, albeit only in the coefficient-free case.
-  Our main theorem here improves on this result to deal with principal coefficients as well.
+  In \cite{Ste13} the first \say[PT]{} author gave a uniform formula for all the exchange relations, albeit only in the coefficient-free case.
+  The main goal of the current paper is to improve on this result to deal with principal coefficients as well. Namely, given any two exchangeable cluster variables in a finite type cluster algebra with acyclic initial seed and principal coefficients, we give an explicit formula for computing their exchange relation. This exchange relation has also a geometric interpretation in terms of roots and weights of the corresponding root system.
 
-  Namely, given any two exchangeable cluster variables in a finite type cluster algebra with acyclic initial seed and principal coefficients, we give an explicit formula for computing their exchange relation.
- In order to make this statement more precise we need to recall few notions and results from \cite{Ste13,YZ08}.
+ 
+ In order to make this more precise, we need to recall few notions and results from \cite{Ste13,YZ08}.
 
-  Let $A$ be any finite type \emph{Cartan matrix} and denote by $W=\langle s_1,\dots,s_n\rangle$ the associated \emph{Weyl group} and \emph{simple reflections}.
+  Let $\A=(a_{ij})$ be any finite type {Cartan matrix} and denote by $W=\langle s_1,\dots,s_n\rangle$ the associated {Weyl group} and {simple reflections}.
   To each \emph{Coxeter element} $c=s_{i_1}\cdots s_{i_n}$ in $W$ we can associate a skew-symmetrizable integer matrix $B_c=(b_{ij})_{i,j\in[1,n]}$ by setting
   \[
     b_{ij}=
@@ -73,14 +79,12 @@ We give an explicit description of all the exchange relations in any finite type
     \end{cases}
   \]
   where we write $i\prec_c j$ if and only if $s_i$ precedes $s_j$ in all reduced expressions of $c$.
-  As $c$ varies we get all the possible \emph{acyclic} exchange matrices in any cluster algebra of the same type as $A$.
-  We will denote by $\cA(c)$ 
-  \say[NR]{You probably want $\cA_\bullet(c)$ here?} 
-  \saySS{Not sure, if I am not mistaken \cite{YZ08} uses this notation. Anyone has a preference? I prefer $\cA_\bullet(c)$} 
-  the cluster algebra with initial exchange matrix $B_c$ and  \emph{principal coefficients} at the initial seed.
+  As $c$ varies, we get all possible \emph{acyclic} exchange matrices of the same cluster algebra.
+  We will denote by $\cA_\bullet(c)$ 
+   the cluster algebra with initial exchange matrix $B_c$ and  \emph{principal coefficients} at the initial seed.
 
-  The algebra $\cA(c)$ is $\ZZ^n$-graded; its cluster variables and cluster monomials are homogeneous elements and their \emph{$\bg$-vector} is their homogeneous degree.
-  Let $\omega_i$ be the i-th \emph{fundamental weight} in the \emph{weight lattice} $P$ of $A$; we will routinely interpret $\bg$-vectors as weights by writing them in the basis of fundamental weights.
+  The algebra $\cA_\bullet(c)$ is $\ZZ^n$-graded; its cluster variables and cluster monomials are homogeneous elements and their \emph{$\bg$-vector} is their homogeneous degree (see~\cite[Section~6]{FZ07}).\say[PT]{}
+  Let $\omega_i$ be the i-th \emph{fundamental weight} in the \emph{weight lattice} $P$ of $\A$; we will routinely interpret $\bg$-vectors as weights by writing them in the basis of fundamental weights.
 
   Let $w_0$ be the longest element of $W$ and denote by $h(i;c)$ the minimum positive integer such that 
   \[
@@ -88,7 +92,7 @@ We give an explicit description of all the exchange relations in any finite type
   \]
   (it is a finite number \cite[Proposition 1.3]{YZ08}).
   \begin{theorem}[{\cite[Theorem 1.4]{YZ08}}]
-    The cluster variables of $\cA(c)$ are naturally in bijection with the elements of the set
+    The cluster variables of $\cA_\bullet(c)$ are naturally in bijection with the elements of the set
     \[
       \Pi(c)
       :=
@@ -98,7 +102,7 @@ We give an explicit description of all the exchange relations in any finite type
     \]
     To the cluster variable $x_\lambda$ it corresponds its $\bg$-vector $\lambda\in\Pi(c)$.
   \end{theorem}
-  This correspondence extends to a bijection between points of $P$ and \emph{cluster monomials} of $\cA(c)$ (cf. \cite[Theorem 1.2]{Ste13}); for $\lambda\in P$ we will denote by $x_\lambda$ the cluster monomial whose $\bg$-vector is $\lambda$.
+  This correspondence extends to a bijection between points of $P$ and \emph{cluster monomials} of $\cA_\bullet(c)$ (cf. \cite[Theorem 1.2]{Ste13}); for $\lambda\in P$ we will denote by $x_\lambda$ the cluster monomial whose $\bg$-vector is $\lambda$.
 
   The set $\Pi(c)$ is naturally endowed with a permutation $\tau_c$ defined by
   \[
@@ -109,27 +113,27 @@ We give an explicit description of all the exchange relations in any finite type
       c\lambda  & \text{otherwise}
     \end{cases}
   \]
-  which extends to a piecewise linear map on the whole of $P$ that is ``compatible'' with the cluster structure of $\cA(c)$.
-  This is a combinatorial shadow of a notable automorphism of the coefficient-free conterpart of $\cA(c)$ sending the cluster variable $x_\lambda$ to $x_{\tau_c(\lambda)}$. 
+  which extends to a piecewise linear map on the whole of $P$ that is ``compatible'' with the cluster structure of $\cA_\bullet(c)$.
+  This is a combinatorial shadow of a notable automorphism of the coefficient-free conterpart of $\cA_\bullet(c)$ sending the cluster variable $x_\lambda$ to $x_{\tau_c(\lambda)}$. 
 
-  Let $Q$ be the \emph{root lattice} of $A$ with simple roots $\alpha_i$; as for $P$, we will routinely think of elements in $Q$ as integer vectors using the basis of simple roots.
+  Let $Q$ be the \emph{root lattice} of $\A$ with simple roots $\alpha_i$; as for $P$, we will routinely think of elements in $Q$ as integer vectors using the basis of simple roots.
   \begin{definition}
-    The \emph{compatibility degree} $(\bullet||\bullet)_c$ is the unique $\tau_c$-invariant function on pairs of elements of $\Pi(c)$ defined by the initial conditions
+    The \emph{compatibility degree} $(\cdot||\cdot)_c$ is the unique $\tau_c$-invariant function on pairs of elements of $\Pi(c)$ defined by the initial conditions
     \[
       (\omega_i||\lambda)_c
       :=
-      \left[ (c^{-1}-1)\lambda ; \alpha_i\right]_+
+      \left[ (c^{-1}-\id)\lambda ; \alpha_i\right]_+
     \]
     where, for $v$ in $Q$, $[v;\alpha_i]$ denotes the $i$-th coefficient of $v$  and $[m]_+$ is a shorthand for $\max\{m, 0\}$ (cf. \cite[Proposition 5.1]{YZ08}).
   \end{definition}
-  The name comes from the following important property, consequence of the polytopal realization of the cluster fan of $\cA(c)$ (\cite{CFZ02,Ste13}).
+  The name comes from the following important property, consequence of the polytopal realization of the cluster fan of $\cA_\bullet(c)$ (\cite{CFZ02,Ste13}).
   \begin{proposition}
     \say[NR]{This theorem should be cited to a specific result (if possible---this kind of statement has been really hard for me to track down in the past!}
     \saySS{My bad: this proposition follows basically from how you prove the main theorem in \cite{Ste13}; unfortunately I was too dumb at the time to realize that this was going to be important and I did not state it in any quotable manner there. To my defence I can only say that even in \cite{CFZ02} they do not give a quotable statement.}
     Two weights $\lambda$ and $\mu$ from $\Pi(c)$ are
     \begin{itemize}
       \item
-        \emph{compatible} (i.e. there is a cluster of $\cA(c)$ containing both $x_\lambda$ and $x_\mu$) if and only if
+        \emph{compatible} (i.e. there is a cluster of $\cA_\bullet(c)$ containing both $x_\lambda$ and $x_\mu$) if and only if
         \[
           (\lambda||\mu)_c = 0
           \quad \quad
@@ -137,7 +141,7 @@ We give an explicit description of all the exchange relations in any finite type
         \]
 
       \item
-        \emph{exchangeable} (i.e. there are two clusters of $\cA(c)$ that can be obtained from one-another by swapping $x_\lambda$ for $x_\mu$) if and only if
+        \emph{exchangeable} (i.e. there are two clusters of $\cA_\bullet(c)$ that can be obtained from one-another by swapping $x_\lambda$ for $x_\mu$) if and only if
         \[
           (\lambda||\mu)_c = 1 = (\mu||\lambda)_c
         \]
@@ -157,16 +161,13 @@ We give an explicit description of all the exchange relations in any finite type
     One of them is $\lambda+\mu$; denote the other by $\lambda\uplus_c\mu$.
   \end{proposition}
 
-  Let $y_1,\dots,y_n$ be the generators of the coefficient semifield of $\cA(c)$ and denote by $y^\alpha$ the product $\prod_{i=1}^n y_i^{[\alpha;\alpha_i]}$.
-  \begin{theorem}
-    \label{thm:main}
+  Let $y_1,\dots,y_n$ be the generators of the coefficient semifield of $\cA_\bullet(c)$ and denote by $y^\alpha$ the product $\prod_{i=1}^n y_i^{[\alpha;\alpha_i]}$.
+
+
+ \begin{theorem}
+    \label{thm:main} \say[PT]{}
     Suppose $\lambda$ and $\mu$ are exchangeable weights in $\Pi(c)$. 
-    Then the cluster variables $x_\lambda$ and $x_\mu$ in $\cA(c)$ satisfy the exchange relation
-    \begin{equation}
-      \label{eq:exrel}
-      x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
-    \end{equation}
-    where $\alpha$ is the unique positive root in the root system of $A$ such that
+    Then there exists a unique  positive root  $\alpha$ in the root system of $\A$ such that
     \begin{equation}
       \label{eq:system}
       -B_c\alpha = \lambda+\mu-\lambda\uplus_c\mu
@@ -176,43 +177,69 @@ We give an explicit description of all the exchange relations in any finite type
       \label{eq:dual}
       \langle\lambda,\alpha^\vee\rangle 
       \langle\mu,\alpha^\vee\rangle 
-      = -1.
+      = -1
     \end{equation}
-    (Here $\alpha^\vee$ denotes the \emph{coroot} corresponding to $\alpha$ while $\langle\bullet,\bullet\rangle$ is the pairing of dual vector spaces.)
-  \end{theorem}
+    (here $\alpha^\vee$ denotes the \emph{coroot} corresponding to $\alpha$ while $\langle\cdot\,,\cdot\rangle$ is the pairing of dual vector spaces);
 
-  Note that the shape of \cref{eq:exrel} follows imediately form the coefficient-free case \cite[Proposition 5.2]{Ste13} together with the observations that $\bc$-vectors are roots in the root system of $A$ (cf. \cite{NS14})  and that the exchange relations in $\cA(c)$ are homogeneous.
-  The real content of our theorem are therefore the explicit conditions that determine $\alpha$. 
+%\noindent
+cluster variables $x_\lambda$ and $x_\mu$ in $\cA_\bullet(c)$ satisfy the exchange relation
+    \begin{equation}
+      \label{eq:exrel}
+      x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}
+    \end{equation}
+   \end{theorem}
+
+
+
+
+  Note that the shape of \cref{eq:exrel} follows immediately from the coefficient-free case \cite[Proposition 5.2]{Ste13} together with the observations that $\bc$-vectors are roots in the root system of $\A$ (cf. \cite{NS14})  and that the exchange relations in $\cA_\bullet(c)$ are homogeneous.
+  The real content of our theorem are therefore the explicit conditions~\cref{eq:system} and~\cref{eq:dual} that determine $\alpha$. 
   They are clearly both necessary.
 
-  Indeed \cref{eq:system} is just a restatement of the fact that the exchange relations in $\cA(c)$ are homogeneous and that the degree of $y_i$ is $-\bb_i$ (the negative of the i-th column of $B_c$).
-  \cref{eq:dual}, instead, follows immediately from \cite[Eq. (1.11)]{NZ11} once we interpret $\bg$-vectors as weights and $\bc$-vectors as roots together with the observation that, when mutating in direction $k$, the $k$-th $\bc$-vector changes into its negative.
+  Indeed, \cref{eq:system} is just a restatement of the fact that the exchange relations in $\cA_\bullet(c)$ are homogeneous and that the degree of $y_i$ is $-\bb_i$ (the negative of the i-th column of $B_c$).
+  \cref{eq:dual}, instead, follows immediately from \cite[Eq. (1.11)]{NZ12} once we interpret $\bg$-vectors as weights and $\bc$-vectors as roots together with the observation that, when mutating in direction $k$, the $k$-th $\bc$-vector changes into its negative.
   
-  On the other hand \cref{eq:system} is not, in principle, sufficient on its own because $B_c$ is, in general, not invertible.
-  None the less, thanks to the fact that we are dealing with positive roots, we will see that it is still enough in every case except in type $D_n$.
+  On the other hand, \cref{eq:system} is not, in principle, sufficient on its own because $B_c$ is, in general, not invertible.
+  Nonetheless, thanks to the fact that we are dealing with positive roots, we will see that it is still enough in every case except in type $D_n$.
   
-  \subsection*{Acknowledgments}
+\begin{remark}
+\label{geom}
+\say[PT]{}
+The exchange relation~(\ref{eq:system}) has the following geometric interpretation. Associating the $\bg$-vectors with weights, one can observe that every cluster corresponds to a cone spanned by the respecting $\bg$-vectors with facets being mirrors of reflections of the Weyl group (see Fig.~\ref{fig:exchange_relation}). If two clusters are neighbors in the exchange graph (i.e., they differ by two exchangeable cluster variables $\lambda$ and $\mu$ only), then the corresponding cones share a facet, and this facet is precisely the mirror of the reflection in the root $\alpha$ from~\cref{eq:system}.    
+
+ \begin{figure}[h]
+    \begin{center}
+      \includegraphics[scale=0.4]{cones-section.pdf}
+    \end{center}
+    \caption{Exchange relation: $\lambda$ and $\mu$ are exchangeable cluster variables, $\alpha$ is the required root}
+    \label{fig:exchange_relation}
+  \end{figure}
+
+\end{remark} 
+ 
+\subsection*{Acknowledgments}
   This paper was completed during a visit to Durham University; the first author would like to thank both Grey College and the Department of Mathematics for the hospitality received.
-  We are also grateful to Anna Felikson for many fruitful discussions, and to Nathan Reading for his help with some hearly attempts at \cref{thm:main}, and for his comments on a preliminary version of this paper.
-  
+  We are also grateful to Anna Felikson for many fruitful discussions, and to Nathan Reading for his help with some nearly attempts at \cref{thm:main} and for his comments on a preliminary version of this paper.
+ 
 \section{Proof of \cref{thm:main}}
-  Recall the notation for $A$, $c$ and $B_c$ from the introduction. 
-  Without loss of generality we consider only Cartan matrices that are not block-decomposable.
-  Further, we assume that the nodes of the Dynkin diagram of $A$ are labeled according to the standard conventions as, for example, in \cite[Table Fin.]{Kac90}.
+\label{proof}
+  Recall the notation for $\A$, $c$ and $B_c$ from the previous section. 
+  Without loss of generality we consider only Cartan matrices that are not decomposable.
+  Further, we assume that the nodes of the Dynkin diagram of $\A$ are labeled according to the standard conventions as, for example, in \cite[Table Fin.]{Kac90}.
 
   We begin our analysis with a well known consideration on the rank of $B_c$.
   \begin{lemma}
     \label{lem:dimensions}
-    If the type of $A$ is not $D_n$, then the kernel of $B_c$ has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
-    If the type of $A$ is $D_n$, then the kernel of $B_c$ has dimension $2$ if $n$ is even and $1$ if $n$ is odd.
+    If the type of $\A$ is not $D_n$, then the kernel of $B_c$ has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
+    If the type of $\A$ is $D_n$, then the kernel of $B_c$ has dimension $2$ if $n$ is even and $1$ if $n$ is odd.
   \end{lemma}
   \begin{proof}
-    The rank of $B_c$ is invariant under mutation so it suffices to establish the property for a single choice of $c$. 
+    The rank of $B_c$ is invariant under mutations so it suffices to establish the property for a single choice of $c$. 
     Let then $c=s_1\cdots s_n$ so that $B_c$ has positive entries above the diagonal.
-    Exceptional types could be dealt uniformly in the argument at the expense of an heavier notation. 
+    Exceptional types could be dealt uniformly in the argument at the expense of a heavier notation. 
     We prefer to check the lemma by direct inspection in those cases.
 
-    Assume at first that the type of $A$ is not $D_n$.
+    Assume at first that the type of $\A$ is not $D_n$.
     When $n$ is even, the matrix $B_c$ is invertible. 
     Indeed, expanding by the first column and then by the first row, we get:
     \[
@@ -227,14 +254,14 @@ We give an explicit description of all the exchange relations in any finite type
     We deduce therefore the required property from type $A_{n-1}$.
   \end{proof}
 
-  This establishes \cref{thm:main} whenever $n$ is even and the type of $A$ is not $D_n$.
+  This establishes \cref{thm:main} whenever $n$ is even and the type of $\A$ is not $D_n$.
   In particular the result holds for all the exceptional types apart from type $E_7$; in order to simplify the remaining analysis we check this exceptional case by direct inspection.
-  From now on we assume that $A$ is not of exceptional type.
+  From now on we assume that $\A$ is not of exceptional type.
 
   \begin{remark}
     \label{rk:induction}
     A careful reader may observe that \cref{lem:dimensions} could be used to establish \cref{thm:main} directly in all finite types with the exception of $D_n$. 
-    Indeed it would be enough to extend any $2k+1 \times 2k+1$ exchange matrix to a $2k+2\times2k+2$ exchange matrix of the same type and deduce the required property from the resulting algebra embedding.
+    Indeed it would be enough to extend any $(2k+1) \times (2k+1)$ exchange matrix to a $(2k+2)\times(2k+2)$ exchange matrix of the same type and deduce the required property from the resulting algebra embedding.
     Instead, we prefer to give a more explicit argument that will simplify the analysis in type $D_n$ as well.
   \end{remark}
 
@@ -243,17 +270,18 @@ We give an explicit description of all the exchange relations in any finite type
   We therefore verify \cref{thm:main} by direct inspection in types $A_3$, $B_3$, $C_3$, and $D_4$.
 
   \begin{definition}
-    The \emph{support} of a vector $v$ is the full subdiagram of the Dynkin diagram of $A$ induced by the nodes corresponding to the non-zero coordinates of $v$ when written in the basis of simple roots.
+    The \emph{support} of a vector $v$ is the full subdiagram of the Dynkin diagram of $\A$ induced by the nodes corresponding to the non-zero coordinates of $v$ when written in the basis of simple roots.
   \end{definition}
 
   \begin{lemma}
-    Let $A$ be of type $A_n$, $B_n$, or $C_n$ with $n=2k+1$.
-    Then the kernel of $B_c$ is generated by a vector with exactly $k+1$ connected components.
-  \end{lemma}
+    Let $\A$ be of type $A_n$, $B_n$, or $C_n$ with $n=2k+1$.
+    Then the support of the vector spanning the kernel of $B_c$ has exactly $k+1$ connected components. 
+  \end{lemma} 
+\say[PT]{}
   \begin{proof}
     By \cref{lem:dimensions} there is a unique (up to a scalar) non-zero vector $v$ such that $B_cv=0$.
     Since the only non-zero entries in $B_c$ are located in the two diagonals adjacent to the main diagonal, $v$ is a linear combination of the $\alpha_i$ with odd $i$.
-    Moreover, since $A$ is not block decomposable, all the entries of these two diagonals are non-zero so that all such $\alpha_i$ appear with non-zero coefficient and the claim follows.
+    Moreover, since $\A$ is not decomposable, all the entries of these two diagonals are non-zero so that all such $\alpha_i$ appear with non-zero coefficient and the claim follows.
     
     More explicitly, for $i>2$ set 
     \[
@@ -263,17 +291,17 @@ We give an explicit description of all the exchange relations in any finite type
         -1 & \text{otherwise.}
       \end{cases}
     \]
-    It is straightforward to verify that the vector $v$ is then
+    It is straightforward to verify that the kernel of $B_c$ is spanned by the vector $v$ defined by \say[PT]{}
     \begin{equation}
       \label{eq:vector}
       v := 
-      \alpha_1 + \sum_{\substack{i=2k+3\\i\leq n}} \frac{\varepsilon_i}{a_{i-1,i}} \alpha_i.
+      \alpha_1 + \sum_{\substack{i\ \mathrm{odd}\\ 3\le\, i\,\leq n}} \frac{\varepsilon_i}{a_{i-1,i}} \alpha_i.
     \end{equation}
   \end{proof}
   
   \begin{lemma}
     \label{lem:ker_Dn_even}
-    Let $A$ be of type $D_n$ with $n$ odd.
+    Let $\A$ be of type $D_n$ with $n$ odd.
     Then the kernel of $B_c$ is generated by $\alpha_{n-1}+\alpha_n$ if $(n-1) \prec_c (n-2) \prec_c n$ or $n \prec_c (n-2) \prec_c (n-1)$.
     Otherwise it is generated by $\alpha_{n-1}-\alpha_n$.
   \end{lemma}
@@ -283,8 +311,8 @@ We give an explicit description of all the exchange relations in any finite type
   \end{proof}
 
   \begin{lemma}
-    Let $A$ be of type $D_n$ with $n=2k$ and $n\geq 4$.
-    Then the kernel of $B_c$ is generated by a vector with exactly $k$ connected components together with one of the two vectors $\alpha_{n-1}\pm\alpha_n$ according to the same prescriptions of \cref{lem:ker_Dn_even}.
+    Let $\A$ be of type $D_n$ with $n=2k$ and $n\geq 4$.
+    Then the kernel of $B_c$ is generated by a vector whose support \say[PT]{} has exactly $k$ connected components together with one of the two vectors $\alpha_{n-1}\pm\alpha_n$ according to the same prescriptions of \cref{lem:ker_Dn_even}.
   \end{lemma}
   \begin{proof}
     The result follows directly by combining the previous two lemmas. 
@@ -294,22 +322,22 @@ We give an explicit description of all the exchange relations in any finite type
 
   To use these information we need the following easy observation obtained by inspection of the appropriate list of roots.
   \begin{lemma}
-    The difference of any two positive roots in the root system of $A$ has at most 2 connected components.
+    The support \say[PT]{} of the difference of any two positive roots in the root system of $\A$ has at most two connected components.
   \end{lemma}
 
   \begin{corollary}
-    If $A$ is of type $A_n$, $B_n$, or $C_n$ with $n=2k+1\geq 5$ \cref{eq:system} has a unique solution among the positive roots of $A$.
+    If $\A$ is of type $A_n$, $B_n$, or $C_n$ with $n=2k+1\geq 5$, \cref{eq:system} has a unique solution among the positive roots of $\A$.
   \end{corollary}
   \begin{proof}
-    Indeed the difference of any two solution is in the kernel of $B_c$ and this is generated by a vector with at least $k+1\geq3$ connected components.
+    Indeed the difference of any two solutions is in the kernel of $B_c$ and this is generated by a vector with at least $k+1\geq3$ connected components.
   \end{proof}
   This concludes the proof of \cref{thm:main} for types $A_n$, $B_n$ and $C_n$.
 
   \begin{corollary}
     \label{cor:kernel-Dn}
-    Suppose the type of $A$ is $D_n$ and $n\geq 5$. 
-    If \cref{eq:system} has more than one solution among the positive roots of $A$ then it has precisely two.
-    Their difference is in the span of either one of $\alpha_{n-1}\pm\alpha_n$ depending on the relative order of $s_{n-2}$,$s_{n-1}$, and $s_n$ in $c$.
+    Suppose the type of $\A$ is $D_n$ and $n\geq 5$. 
+    If \cref{eq:system} has more than one solution among the positive roots of $\A$ then it has precisely two.
+    Their difference is in the span of either one of $\alpha_{n-1}\pm\alpha_n$ depending on the relative order of ${n-2}$, ${n-1}$, and $n$ in $c$.\say[PT]{}
   \end{corollary}
   \begin{proof}
     The only possibility for two distinct roots to be solutions of \cref{eq:system} is for their difference to be in the span of $\alpha_{n-1}\pm\alpha_n$ (the other generating vector of the kernel of $B_c$, when it exists, has too many connected components by the assumption on $n$). 
@@ -320,10 +348,11 @@ We give an explicit description of all the exchange relations in any finite type
   We will do so using the surface realization of cluster algebras introduced in \cite{FST08,FT12}. 
   The reader not familiar with the relevant terminology can find a simplified summary (sufficient for the case at hand) in the beginning of \cite[Section 4.1]{NS14}.
   
-  Any cluster algebra of type $D_n$ can be realized as triangulated once-punctured disk. 
-  Since we are only considering acyclic initial seeds the lamination encoding the initial triangulation will contain a digon with one side on the boundary of the disk (cf. \cref{fig:D_n-roots}).
-  By reflecting our surface, if necessary, we can always assume that $n-2 \prec_c n-1$; it will therefore suffices to consider only two cases: either $n-2 \prec_c n$, or $n \prec_c n-2$.
+  Any cluster algebra of type $D_n$ can be realized as a triangulated once-punctured disk. 
+  Since we are only considering acyclic initial seeds, the collection of elementary laminations \say[PT]{} encoding the initial triangulation will contain a digon with one side on the boundary of the disk (cf. \cref{fig:D_n-roots}).
+  By reflecting our surface, if necessary, we can always assume that $n-2 \prec_c n-1$; it will therefore suffice to consider only two cases: either $n-2 \prec_c n$, or $n \prec_c n-2$.
   \saySS{A more general remark is that passing from $c$ to $c^{-1}$ changes $\bg$-vectors to their negatives and preserves the set of $\bc$-vectors; should we state this at the beginning of the paper?}
+ \say[PT]{I am not sure, I am afraid this will increase the amount of not explained stuff which has no direct relation to the proof}
   Moreover we can always change simultaneously all the taggings and spiralling directions at the puncture to simplify our pictures.
 
   \begin{figure}
@@ -339,18 +368,16 @@ We give an explicit description of all the exchange relations in any finite type
     In all the cases in which \cref{eq:system} is satisfied by two distinct positive roots at least one of $x_\lambda$ and $x_\mu$ corresponds to a radius.
   \end{lemma}
   \begin{proof}
-    It suffices to show that any quadrilateral whose diagonal are both chords cannot yield the desired exchange relation.
-    The two cases to be considered are pictured in \cref{fig:D_n-roots}.
+    It suffices to show that any quadrilateral whose diagonals are both chords cannot yield two positive roots satisfying \cref{eq:system}. 
+    The two cases to be considered, namely $n-2 \prec_c n$ and  $n \prec_c n-2$,\say[PT]{} are pictured in \cref{fig:D_n-roots}. 
 
     Suppose at first that $n-2 \prec_c n$ and let $\alpha$ be one of the two positive roots satisfying \cref{eq:system}.
-    By \cref{cor:kernel-Dn}, exactly one among the $(n-1)$-st and the $n$-th simple root coordinates of $\alpha$ is $0$; the other is $1$.
-    In particular any quadrilateral supporting this exchange relations must give different shear coordinates to the $(n-1)$-st and $n$-th elementary laminations.
-    But a quadrilateral whose diagonals are both chords assign either $1$ or $0$ to both simultaneously.
+    By \cref{cor:kernel-Dn}, exactly one among the $(n-1)$-st and the $n$-th simple root coordinates of $\alpha$ is $0$, and the other is $1$.
+    In particular, any diagonal of\say[PT]{} any quadrilateral supporting this exchange relation must give different shear coordinates to the $(n-1)$-st and $n$-th elementary laminations. However, if both diagonals of a quadrilateral are chords, then these diagonals do not distinguish the two elementary laminations, so each of the diagonals assigns either $\pm 1$ \say[PT]or $0$ to both simultaneously.\say[PT]{It might make sense to draw the diagonals as well (in a different/lighter color), what do you think?}
 
     Suppose now that $n \prec_c n-2$ and let $\alpha$ be again one of the two positive roots satisfying \cref{eq:system}.
-    Since one of $\alpha\pm(\alpha_{n-1}+\alpha_n)$ is also a root the $(n-2)$-nd coordinate of $\alpha$ is $1$ while both the $(n-1)$-st and $n$-th coordinates are simultaneously $1$ or $0$.
-    But a quadrilateral whose diagonals are both chords, if it gives shear coordinate $1$ to both the $(n-1)$-st and $n$-th elementary lamination, then it assign $2$ to the $(n-2)$-nd elementary lamination.
-    If instead it gives shear coordinate $0$ to both $(n-1)$-st and $n$-th elementary lamination, then it also assigns $0$ to the $(n-2)$-nd elementary lamination.
+    Since one of $\alpha\pm(\alpha_{n-1}+\alpha_n)$ is also a root, the $(n-2)$-nd coordinate of $\alpha$ is $1$ while both the $(n-1)$-st and $n$-th coordinates are simultaneously $1$ or $0$. Thus, any diagonal of any quadrilateral supporting this exchange relation must  give shear coordinate $\pm 1$ to $(n-2)$-nd elementary lamination, and equal values to the $(n-1)$-st and $n$-th ones. Now take any quadrilateral whose diagonals are both chords. If its diagonal gives shear coordinate $\pm 1$ to both the $(n-1)$-st and $n$-th elementary lamination, then it assigns $\pm 2$ to the $(n-2)$-nd elementary lamination.\say[PT]{}
+    If instead it gives shear coordinate $0$ to both $(n-1)$-st and $n$-th elementary laminations, then it also assigns $0$ to the $(n-2)$-nd elementary lamination.
   \end{proof}
 
   \begin{lemma}
@@ -359,15 +386,15 @@ We give an explicit description of all the exchange relations in any finite type
   \end{lemma}
   \begin{proof}
     \cite{FST08,FT12} do not contain an explicit recipe to compute the $\bg$-vector of the cluster variable associated to an arc.
-    An easy rule, though, can be obtained using \cite[Eq. (1.13)]{NZ11}: it suffices to reflect our surface and compute the shear coordinates of the elementary lamination corresponding to the desired arc with respect to the initial triangulation.
+    An easy rule, though, can be obtained using \cite[Eq. (1.13)]{NZ12}: it suffices to reflect our surface and compute the shear coordinates of the elementary lamination corresponding to the desired arc with respect to the initial triangulation (see e.g.~\cite[Prop. 5.2]{Re14} or~\cite[Lemma 8.6]{FeTu15}\say[PT]{our (FT) lemma is essentially the same as Nathan's one, but I think it makes sense to quote it as it emphasizes exactly the same geometry we use here}).  
     \saySS{\label{note}Pavel you said that this is written already somewhere, do you have a reference to add here?}
 \say[NR]{About Note~\ref{note}, you can find this, said another way, as Proposition 5.2 of my paper "Universal geometric cluster algebras from surfaces" but it wouldn't surprise me if someone else wrote it down earlier. }
-    \saySS{We do not care much about spiralling directions because we only care about the absolute value of the coordinates; it might be a good idea though to check that \cite{NZ11} gives plays nicely with our conventions.}
+    \saySS{We do not care much about spiralling directions because we only care about the absolute value of the coordinates; it might be a good idea though to check that \cite{NZ12} gives plays nicely with our conventions.}
     Since we only care for the last two entries it will suffices to look inside the unique digon in the initial triangulation.
     We are in the situation depicted in \cref{fig:D_n-weights}.
     
     Suppose at first that $n \prec_c n-2$. 
-    From \cite[Fig. 36]{FT12} it follows immediately that, in order for a radial elementary lamination to have non-zero $n$-th shear coordinate, it has either to start from the side of the digon lying on the boundary of the disk and then spiral clockwise to the puncture, or cross the other side and spiral counterclockwise. 
+    It follows immediately from \cite[Fig. 36]{FT12} \say[PT]{} that, in order for a radial elementary lamination to have non-zero $n$-th shear coordinate, it has either to start from the side of the digon lying on the boundary of the disk and then spiral clockwise to the puncture, or cross the other side and spiral counterclockwise. 
     In either case such a lamination will have $(n-1)$-st shear coordinate equal to $0$.
     The situation reverses for radial elementary laminations having non-zero $(n-1)$-st shear coordinate.
 
@@ -395,7 +422,7 @@ We give an explicit description of all the exchange relations in any finite type
     \langle \lambda, \alpha' \rangle =
     \langle \lambda, \alpha \rangle \pm 1.
   \]
-  Therefore, since the pairing $\langle\bullet,\bullet\rangle$ is integer-valued when computed on (co-)roots and weights, $\alpha$ and $\alpha'$ cannot both satisfy \cref{eq:dual}.
+  Therefore, since the pairing $\langle\cdot\,,\cdot\rangle$ is integer-valued when computed on (co-)roots and weights, $\alpha$ and $\alpha'$ cannot both satisfy \cref{eq:dual}.
 
   \begin{remark}
     In view of some ongoing work of the first author with Nathan Reading it appears that a modified version of \cite[Propositions 5.1 and 5.2]{Ste13} holds in affine types as well.
