@@ -17,7 +17,6 @@
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bb}{\mathbf{b}}
 \newcommand{\id}{\mathrm{id}}
-\newcommand{\A}{{M}}
 
 % ambients and numbering
 \newtheorem{theorem}{Theorem}[section]
@@ -73,7 +72,7 @@ We give an explicit description of all the exchange relations in any finite type
  
   In order to make this more precise, we need to recall few notions and results from \cite{Ste13,YZ08}.
 
-  Let $\A=(a_{ij})$ be any finite type Cartan matrix and denote by $W=\langle s_1,\dots,s_n\rangle$ the associated Weyl group and simple reflections.
+  Let $A=(a_{ij})$ be any finite type Cartan matrix; we denote by $\Gamma$ its Dynkin diagram and by $W=\langle s_1,\dots,s_n\rangle$ the associated Weyl group and simple reflections.
   To each \emph{Coxeter element} $c=s_{i_1}\cdots s_{i_n}$ in $W$ we can associate a skew-symmetrizable integer matrix $B_c=(b_{ij})_{i,j\in[1,n]}$ by setting
   \[
     b_{ij}=
@@ -88,7 +87,7 @@ We give an explicit description of all the exchange relations in any finite type
   We will denote by $\cA_\bullet(c)$ the cluster algebra with initial exchange matrix $B_c$ and  \emph{principal coefficients} at the initial seed.
 
   The algebra $\cA_\bullet(c)$ is $\ZZ^n$-graded; its cluster variables and cluster monomials are homogeneous elements and their \emph{$\bg$-vector} is their homogeneous degree (see~\cite[Section~6]{FZ07}).
-  Let $\omega_i$ be the i-th \emph{fundamental weight} in the \emph{weight lattice} $P$ of $\A$; we will routinely interpret $\bg$-vectors as weights by writing them in the basis of fundamental weights.
+  Let $\omega_i$ be the i-th \emph{fundamental weight} in the \emph{weight lattice} $P$ of $\Gamma$; we will routinely interpret $\bg$-vectors as weights by writing them in the basis of fundamental weights.
 
   Let $w_0$ be the longest element of $W$ and denote by $h(i;c)$ the minimum positive integer such that 
   \[
@@ -120,7 +119,7 @@ We give an explicit description of all the exchange relations in any finite type
   which extends to a piecewise linear map on the whole of $P$ that is ``compatible'' with the cluster structure of $\cA_\bullet(c)$.
   This is a combinatorial shadow of a notable automorphism of the coefficient-free conterpart of $\cA_\bullet(c)$ sending the cluster variable $x_\lambda$ to $x_{\tau_c(\lambda)}$. 
 
-  Let $Q$ be the \emph{root lattice} of $\A$ with simple roots $\alpha_i$; as for $P$, we will routinely think of elements in $Q$ as integer vectors using the basis of simple roots.
+  Let $Q$ be the \emph{root lattice} of $\Gamma$ with simple roots $\alpha_i$; as for $P$, we will routinely think of elements in $Q$ as integer vectors using the basis of simple roots.
   \begin{definition}
     The \emph{compatibility degree} $(\cdot||\cdot)_c$ is the unique $\tau_c$-invariant function on pairs of elements of $\Pi(c)$ defined by the initial conditions
     \[
@@ -168,7 +167,7 @@ We give an explicit description of all the exchange relations in any finite type
   \begin{theorem}
     \label{thm:main}
     Suppose $\lambda$ and $\mu$ are exchangeable weights in $\Pi(c)$. 
-    Then there exists a unique  positive root  $\alpha$ in the root system of $\A$ such that
+    Then there exists a unique  positive root  $\alpha$ in the root system of $\Gamma$ such that
     \begin{equation}
       \label{eq:system}
       -B_c\alpha = \lambda+\mu-\lambda\uplus_c\mu
@@ -188,7 +187,7 @@ We give an explicit description of all the exchange relations in any finite type
     \end{equation}
    \end{theorem}
 
-  Note that the shape of \cref{eq:exrel} follows immediately from the coefficient-free case \cite[Proposition 5.2]{Ste13} together with the observations that $\bc$-vectors are roots in the root system of $\A$ (cf. \cite{NS14})  and that the exchange relations in $\cA_\bullet(c)$ are homogeneous.
+  Note that the shape of \cref{eq:exrel} follows immediately from the coefficient-free case \cite[Proposition 5.2]{Ste13} together with the observations that $\bc$-vectors are roots in the root system of $\Gamma$ (cf. \cite{NS14})  and that the exchange relations in $\cA_\bullet(c)$ are homogeneous.
   The real content of our theorem are therefore the explicit conditions~\cref{eq:system} and~\cref{eq:dual} that determine $\alpha$. 
   They are clearly both necessary.
 
@@ -218,15 +217,15 @@ We give an explicit description of all the exchange relations in any finite type
  
 \section{Proof of \cref{thm:main}}
 \label{proof}
-  Recall the notation for $\A$, $c$ and $B_c$ from the previous section. 
-  Without loss of generality we consider only Cartan matrices that are not decomposable.
-  Further, we assume that the nodes of the Dynkin diagram of $\A$ are labeled according to the standard conventions as, for example, in \cite[Table Fin.]{Kac90}.
+  Recall the notation for $\Gamma$, $c$ and $B_c$ from the previous section. 
+  Without loss of generality we consider only Dynkin diagrams that are connected.
+  Further, we assume that the nodes of $\Gamma$ are labeled according to the standard conventions as, for example, in \cite[Table Fin.]{Kac90}.
 
   We begin our analysis with a well known consideration on the rank of $B_c$.
   \begin{lemma}
     \label{lem:dimensions}
-    If the type of $\A$ is not $D_n$, then the kernel of $B_c$ has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
-    If the type of $\A$ is $D_n$, then the kernel of $B_c$ has dimension $2$ if $n$ is even and $1$ if $n$ is odd.
+    If the type of $\Gamma$ is not $D_n$, then the kernel of $B_c$ has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
+    If the type of $\Gamma$ is $D_n$, then the kernel of $B_c$ has dimension $2$ if $n$ is even and $1$ if $n$ is odd.
   \end{lemma}
   \begin{proof}
     The rank of $B_c$ is invariant under mutations so it suffices to establish the property for a single choice of $c$. 
@@ -234,7 +233,7 @@ We give an explicit description of all the exchange relations in any finite type
     Exceptional types could be dealt uniformly in the argument at the expense of introducing heavier notation. 
     We prefer to check the lemma by direct inspection in those cases.
 
-    Assume at first that the type of $\A$ is not $D_n$.
+    Assume at first that the type of $\Gamma$ is not $D_n$.
     When $n$ is even, the matrix $B_c$ is invertible. 
     Indeed, expanding by the first column and then by the first row, we get:
     \[
@@ -249,9 +248,9 @@ We give an explicit description of all the exchange relations in any finite type
     We deduce therefore the required property from type $A_{n-1}$.
   \end{proof}
 
-  This establishes \cref{thm:main} whenever $n$ is even and the type of $\A$ is not $D_n$.
+  This establishes \cref{thm:main} whenever $n$ is even and the type of $\Gamma$ is not $D_n$.
   In particular the result holds for all the exceptional types apart from type $E_7$; in order to simplify the remaining analysis we check this exceptional case by direct inspection.
-  From now on we assume that $\A$ is not of exceptional type.
+  From now on we assume that $\Gamma$ is not of exceptional type.
 
   \begin{remark}
     \label{rk:induction}
@@ -265,17 +264,17 @@ We give an explicit description of all the exchange relations in any finite type
   We therefore verify \cref{thm:main} by direct inspection in types $A_3$, $B_3$, $C_3$, and $D_4$.
 
   \begin{definition}
-    The \emph{support} of a vector $v$ is the full subdiagram of the Dynkin diagram of $\A$ induced by the nodes corresponding to the non-zero coordinates of $v$ when written in the basis of simple roots.
+    The \emph{support} of a vector $v$ is the full subdiagram of $\Gamma$ induced by the nodes corresponding to the non-zero coordinates of $v$ when written in the basis of simple roots.
   \end{definition}
 
   \begin{lemma}
-    Let $\A$ be of type $A_n$, $B_n$, or $C_n$ with $n=2k+1$.
+    Let $\Gamma$ be of type $A_n$, $B_n$, or $C_n$ with $n=2k+1$.
     Then the support of the vector spanning the kernel of $B_c$ has exactly $k+1$ connected components. 
   \end{lemma} 
   \begin{proof}
     By \cref{lem:dimensions} there is a unique (up to a scalar) non-zero vector $v$ such that $B_cv=0$.
     Since the only non-zero entries in $B_c$ are located in the two diagonals adjacent to the main diagonal, $v$ is a linear combination of the $\alpha_i$ with odd $i$.
-    Moreover, since $\A$ is not decomposable, all the entries of these two diagonals are non-zero so that all such $\alpha_i$ appear with non-zero coefficient and the claim follows.
+    Moreover, since $\Gamma$ is connected, all the entries of these two diagonals are non-zero so that all such $\alpha_i$ appear with non-zero coefficient and the claim follows.
     
     More explicitly, for $i>2$ set 
     \[
@@ -295,7 +294,7 @@ We give an explicit description of all the exchange relations in any finite type
   
   \begin{lemma}
     \label{lem:ker_Dn_even}
-    Let $\A$ be of type $D_n$ with $n$ odd.
+    Let $\Gamma$ be of type $D_n$ with $n$ odd.
     Then the kernel of $B_c$ is generated by $\alpha_{n-1}+\alpha_n$ if $(n-1) \prec_c (n-2) \prec_c n$ or $n \prec_c (n-2) \prec_c (n-1)$.
     Otherwise it is generated by $\alpha_{n-1}-\alpha_n$.
   \end{lemma}
@@ -305,7 +304,7 @@ We give an explicit description of all the exchange relations in any finite type
   \end{proof}
 
   \begin{lemma}
-    Let $\A$ be of type $D_n$ with $n=2k$ and $n\geq 4$.
+    Let $\Gamma$ be of type $D_n$ with $n=2k$ and $n\geq 4$.
     Then the kernel of $B_c$ is generated by a vector whose support has exactly $k$ connected components together with one of the two vectors $\alpha_{n-1}\pm\alpha_n$ according to the same prescriptions of \cref{lem:ker_Dn_even}.
   \end{lemma}
   \begin{proof}
@@ -316,11 +315,11 @@ We give an explicit description of all the exchange relations in any finite type
 
   To use these information we need the following easy observation obtained by inspection of the appropriate list of roots.
   \begin{lemma}
-    The support of the difference of any two positive roots in the root system of $\A$ has at most two connected components.
+    The support of the difference of any two positive roots in the root system of $\Gamma$ has at most two connected components.
   \end{lemma}
 
   \begin{corollary}
-    If $\A$ is of type $A_n$, $B_n$, or $C_n$ with $n=2k+1\geq 5$, \cref{eq:system} has a unique solution among the positive roots of $\A$.
+    If $\Gamma$ is of type $A_n$, $B_n$, or $C_n$ with $n=2k+1\geq 5$, \cref{eq:system} has a unique solution among the positive roots of $\Gamma$.
   \end{corollary}
   \begin{proof}
     Indeed the difference of any two solutions is in the kernel of $B_c$ and this is generated by a vector with at least $k+1\geq3$ connected components.
@@ -329,8 +328,8 @@ We give an explicit description of all the exchange relations in any finite type
 
   \begin{corollary}
     \label{cor:kernel-Dn}
-    Suppose the type of $\A$ is $D_n$ and $n\geq 5$. 
-    If \cref{eq:system} has more than one solution among the positive roots of $\A$ then it has precisely two.
+    Suppose the type of $\Gamma$ is $D_n$ and $n\geq 5$. 
+    If \cref{eq:system} has more than one solution among the positive roots of $\Gamma$ then it has precisely two.
     Their difference is in the span of either one of $\alpha_{n-1}\pm\alpha_n$ depending on the relative order in which $s_{n-2}$, $s_{n-1}$, and $s_n$ appear in $c$.
     \saySS{Here I think we really need to say $s_i$ and not just the index $i$}
   \end{corollary}
