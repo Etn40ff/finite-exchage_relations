@@ -1,11 +1,9 @@
 \documentclass[11pt]{amsart}
 \usepackage[margin=1in, marginparwidth=0.8in]{geometry}
+\usepackage{xcolor}
 \usepackage[colorlinks,linkcolor=black!50!red,citecolor=blue,pdfpagemode=None]{hyperref}
 \usepackage[capitalise]{cleveref}
 \usepackage{graphicx}
-
-\usepackage[draft]{say}
-\newcommand{\saySS}[1]{\say[SS]{#1}}
 
 % shorthands 
 \newcommand{\cA}{\mathcal{A}}
@@ -49,11 +47,10 @@ We give an explicit description of all the exchange relations in any finite type
 \maketitle
 
 \section{Introduction and main results}
-  \saySS{I changed this paragraph to 1) mention exchange relations; 2) not mention almost positive roots (I fear it may generate confusion on why the exponent of our coefficients is a root); 3) mention Cartan matrices.}
   A cluster algebra, as defined by Fomin and Zelevinsky in~\cite{FZ02}, is a commutative ring with a distinguished set of generators called \emph{cluster variables}. 
   Cluster variables are grouped into overlapping collections of the same cardinality (\emph{clusters}) connected by local transition rules called \emph{mutations}.
   To each mutation corresponds an \emph{exchange relation}: a dependency relation among the cluster variables of two adjacent clusters.
-  In~\cite{FZ03}, Fomin and Zelevinsky showed that cluster algebras of \emph{finite type}, i.e. those containing only a finite number of cluster variables, are classified by finite type \emph{Cartan matrices}.
+  In~\cite{FZ03}, Fomin and Zelevinsky showed that cluster algebras of \emph{finite type}, i.e. those containing only a finite number of cluster variables, are classified by finite type Cartan matrices.
 
   Given two cluster variables in a cluster algebra, deciding whether they belong to the same cluster or if they can be obtained from one another by a single mutation is, in general, a hard problem to address.
   In some special situations though, when suitable combinatorial models exist, such questions become much easier to decide.
@@ -331,7 +328,6 @@ We give an explicit description of all the exchange relations in any finite type
     Suppose the type of $\Gamma$ is $D_n$ and $n\geq 5$. 
     If \cref{eq:system} has more than one solution among the positive roots of $\Gamma$ then it has precisely two.
     Their difference is in the span of either one of $\alpha_{n-1}\pm\alpha_n$ depending on the relative order in which $s_{n-2}$, $s_{n-1}$, and $s_n$ appear in $c$.
-    \saySS{Here I think we really need to say $s_i$ and not just the index $i$}
   \end{corollary}
   \begin{proof}
     The only possibility for two distinct roots to be solutions of \cref{eq:system} is for their difference to be in the span of $\alpha_{n-1}\pm\alpha_n$ (the other generating vector of the kernel of $B_c$, when it exists, has too many connected components by the assumption on $n$). 
@@ -424,7 +420,89 @@ We give an explicit description of all the exchange relations in any finite type
   \end{remark}
 
 % bibliography
-\bibliographystyle{amsalpha}
-\bibliography{bibliography}
+% HACK: we wanted to have a different label for FeTu15 to distinguish it from FT
+% to obtain it from scratch
+% 1) uncomment the following two lines
+% 2) delete all the pasted text below
+% 3) compile file appropriately
+% 4) comment again the two lines
+% 5) paste the content of finexrel.bbl
+% 6) edit as desired
+
+%\bibliographystyle{amsalpha}
+%\bibliography{bibliography}
+
+% pasted from finexrel.bbl
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{CFZ02}
+
+\bibitem[CFZ02]{CFZ02}
+Fr{\'e}d{\'e}ric Chapoton, Sergey Fomin, and Andrei Zelevinsky, \emph{Polytopal
+  realizations of generalized associahedra}, Canad. Math. Bull. \textbf{45}
+  (2002), no.~4, 537--566, Dedicated to Robert V. Moody. \MR{1941227
+  (2003j:52014)}
+
+\bibitem[FST08]{FST08}
+Sergey Fomin, Michael Shapiro, and Dylan Thurston, \emph{Cluster algebras and
+  triangulated surfaces. {I}. {C}luster complexes}, Acta Math. \textbf{201}
+  (2008), no.~1, 83--146. \MR{2448067 (2010b:57032)}
+
+\bibitem[FT12]{FT12}
+Sergey Fomin and Dylan Thurston, \emph{{Cluster algebras and triangulated
+  surfaces. Part II: Lambda lengths}}, arXiv e-print 1210.5569 (2012).
+
+\bibitem[FeTu15]{FeTu15}
+Anna {Felikson} and Pavel {Tumarkin}, \emph{{Bases for cluster algebras from
+  orbifolds}}, arXiv e-print 1511.08023 (2015).
+
+\bibitem[FZ02]{FZ02}
+Sergey Fomin and Andrei Zelevinsky, \emph{Cluster algebras. {I}.
+  {F}oundations}, J. Amer. Math. Soc. \textbf{15} (2002), no.~2, 497--529.
+  \MR{1887642}
+
+\bibitem[FZ03]{FZ03}
+\bysame, \emph{Cluster algebras. {II}. {F}inite type classification}, Invent.
+  Math. \textbf{154} (2003), no.~1, 63--121. \MR{2004457}
+
+\bibitem[FZ07]{FZ07}
+\bysame, \emph{Cluster algebras. {IV}. {C}oefficients}, Compos. Math.
+  \textbf{143} (2007), no.~1, 112--164. \MR{2295199 (2008d:16049)}
+
+\bibitem[Kac90]{Kac90}
+Victor~G. Kac, \emph{Infinite-dimensional {L}ie algebras}, third ed., Cambridge
+  University Press, Cambridge, 1990. \MR{1104219 (92k:17038)}
+
+\bibitem[NS14]{NS14}
+Tomoki Nakanishi and Salvatore Stella, \emph{Diagrammatic description of
+  {$c$}-vectors and {$d$}-vectors of cluster algebras of finite type},
+  Electron. J. Combin. \textbf{21} (2014), no.~1, Paper 1.3, 107. \MR{3177498}
+
+\bibitem[NZ12]{NZ12}
+Tomoki Nakanishi and Andrei Zelevinsky, \emph{On tropical dualities in cluster
+  algebras}, Algebraic groups and quantum groups, Contemp. Math., vol. 565,
+  Amer. Math. Soc., Providence, RI, 2012, pp.~217--226. \MR{2932428}
+
+\bibitem[Rea14]{Re14}
+Nathan Reading, \emph{Universal geometric cluster algebras from surfaces},
+  Trans. Amer. Math. Soc. \textbf{366} (2014), no.~12, 6647--6685. \MR{3267022}
+
+\bibitem[Ste13]{Ste13}
+Salvatore Stella, \emph{Polyhedral models for generalized associahedra via
+  {C}oxeter elements}, J. Algebraic Combin. \textbf{38} (2013), no.~1,
+  121--158. \MR{3070123}
+
+\bibitem[YZ08]{YZ08}
+Shih-Wei Yang and Andrei Zelevinsky, \emph{Cluster algebras of finite type via
+  {C}oxeter elements and principal minors}, Transform. Groups \textbf{13}
+  (2008), no.~3-4, 855--895. \MR{2452619 (2009j:13029)}
+
+\end{thebibliography}
+% end pasted from finextel.bbl
 
 \end{document}
