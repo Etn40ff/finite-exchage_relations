@@ -1,13 +1,39 @@
-\documentclass[11pt]{amsart}
-\usepackage[margin=1in, marginparwidth=0.8in]{geometry}
-\usepackage{xcolor}
-\usepackage[colorlinks,linkcolor=black!50!red,citecolor=blue,pdfpagemode=None]{hyperref}
+\RequirePackage{ifpdf}
+\ifpdf
+\documentclass[pdftex]{sigma}
+\else
+\documentclass{sigma}
+\fi
+
+% extra packages
 \usepackage[capitalise]{cleveref}
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{arrows}
 \usepackage{multicol}
+
+% ambients
+\numberwithin{equation}{section}
+\numberwithin{theorem}{section}
+\numberwithin{proposition}{section}
+\numberwithin{lemma}{section}
+\numberwithin{corollary}{section}
+\numberwithin{definition}{section}
+\numberwithin{example}{section}
+\numberwithin{remark}{section}
+\numberwithin{note}{section}
+\newtheorem{Theorem}{Theorem}[section]
+\newtheorem{Corollary}[Theorem]{Corollary}
+\newtheorem{Lemma}[Theorem]{Lemma}
+\newtheorem{Proposition}[Theorem]{Proposition}
+{
+  \theoremstyle{definition}
+  \newtheorem{Definition}[Theorem]{Definition}
+  \newtheorem{Note}[Theorem]{Note}
+  \newtheorem{Example}[Theorem]{Example}
+  \newtheorem{Remark}[Theorem]{Remark}
+}
 
 % shorthands
 \newcommand{\cA}{\mathcal{A}}
@@ -19,19 +45,6 @@
 \newcommand{\bc}{\mathbf{c}}
 \newcommand{\bb}{\mathbf{b}}
 \newcommand{\id}{\mathrm{id}}
-
-% ambients and numbering
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{example}[theorem]{Example}
-\theoremstyle{definition}
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{definition}[theorem]{Definition}
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
 
 % Draw Dynkin diagrams
 \newcommand{\dynkinradius}{.06cm}
@@ -45,21 +58,35 @@
 \newenvironment{dynkin}{\begin{tikzpicture}[baseline=-0.6ex,decoration={markings,mark=at position 0.7 with {\arrow[line width=0.06cm]{angle 60}}}]}{\end{tikzpicture}}
 
 \begin{document}
-\title[Exchange relations for finite type cluster algebras]{Exchange relations for finite type cluster algebras with acyclic initial seed and principal coefficients}
 
-\author[Stella]{Salvatore Stella}
-\address[Salvatore Stella]{IN$d$AM - Marie Curie Actions fellow, Universit\`a ``La Sapienza'', Roma, Italy.}
-\email{stella@mat.uniroma1.it}
+\renewcommand{\PaperNumber}{***}
 
-\author[tumarkin]{Pavel Tumarkin}
-\address[Pavel Tumarkin]{Department of Mathematical Sciences, Durham University, UK}
-\email{pavel.tumarkin@durham.ac.uk}
+\FirstPageHeading
 
-\begin{abstract}
-We give an explicit description of all the exchange relations in any finite type cluster algebra with acyclic initial seed and principal coefficients.
-\end{abstract}
+\ShortArticleName{Exchange relations for finite type cluster algebras}
 
-\maketitle
+\ArticleName{Exchange relations for finite type cluster algebras with acyclic initial seed and principal coefficients}
+
+% Names of the authors for the title of the paper
+\Author{Salvatore STELLA~$^\dag$ and Pavel TUMARKIN~$^\ddag$}
+
+\AuthorNameForHeading{S.~Stella and P.~Tumarkin}
+
+\Address{$^\dag$~IN$d$AM - Marie Curie Actions fellow, Universit\`a ``La Sapienza'', Roma, Italy.}
+\EmailD{\href{mailto:tella@mat.uniroma1.it}{stella@mat.uniroma1.it}}
+\URLaddressD{\url{http://www1.mat.uniroma1.it/people/stella/index.shtml}}
+
+\Address{$^\ddag$~Department of Mathematical Sciences, Durham University, UK}
+\EmailD{\href{pavel.tumarkin@durham.ac.uk}{pavel.tumarkin@durham.ac.uk}}
+\URLaddressD{\url{http://www.maths.dur.ac.uk/users/pavel.tumarkin/}}
+
+\ArticleDates{Received ???, in final form ????; Published online ????}
+
+\Abstract{We give an explicit description of all the exchange relations in any finite type cluster algebra with acyclic initial seed and principal coefficients.}
+
+\Keywords{Cluster Algebras; Exchange Relations}
+
+\Classification{13F60}
 
 \section{Introduction and main results}
   A cluster algebra, as defined by Fomin and Zelevinsky in~\cite{FZ02}, is a commutative ring with a distinguished set of generators called \emph{cluster variables}.
@@ -223,10 +250,6 @@ We give an explicit description of all the exchange relations in any finite type
     \end{figure}
 \end{remark}
 
-\subsection*{Acknowledgments}
-  This paper was completed during a visit to Durham University; the first author would like to thank both Grey College and the Department of Mathematics for the hospitality received.
-  We are also grateful to Anna Felikson for many fruitful discussions, and to Nathan Reading for his help with some early attempts at \cref{thm:main} and for his comments on a preliminary version of this paper.
-
 \section{Proof of \cref{thm:main}}
 \label{proof}
   Recall the notation for $\Gamma$, $c$ and $B_c$ from the previous section.
@@ -234,6 +257,7 @@ We give an explicit description of all the exchange relations in any finite type
   Further, we assume that the nodes of $\Gamma$ are labeled according to the conventions in \cref{fig:Dynkin}.
 
 \begin{figure}[h]
+  \centering
   \begin{minipage}{0.8\textwidth}
     \begin{multicols}{2}
       \begin{itemize}
@@ -448,6 +472,7 @@ We give an explicit description of all the exchange relations in any finite type
 
   To use these information we need the following easy observation obtained by inspection of the appropriate list of roots.
   \begin{lemma}
+    \label{lem:components}
     If $\Gamma$ is of type $A_n$, $B_n$, or $C_n$, then the support of the difference of any two positive roots in the root system of $\Gamma$ has at most two connected components.
     If $\Gamma$ is of type $D_n$, then the support of the difference of any two positive roots in the root system of $\Gamma$ has at most three connected components.
   \end{lemma}
@@ -556,86 +581,12 @@ We give an explicit description of all the exchange relations in any finite type
     The analysis required to establish it, though, will probably be more complicated than the finite case one because the corank of $B_c$ can be as big as $4$ and the argument of \cref{rk:induction} does not apply.
   \end{remark}
 
-% bibliography
-% HACK: we wanted to have a different label for FeTu15 to distinguish it from FT
-% to obtain it from scratch
-% 1) uncomment the following two lines
-% 2) delete all the pasted text below
-% 3) compile file appropriately
-% 4) comment again the two lines
-% 5) paste the content of finexrel.bbl
-% 6) edit as desired
+\subsection*{Acknowledgements}
+  This paper was completed during a visit to Durham University; the first author would like to thank both Grey College and the Department of Mathematics for the hospitality received.
+  We are also grateful to Anna Felikson for many fruitful discussions, and to Nathan Reading for his help with some early attempts at \cref{thm:main} and for his comments on a preliminary version of this paper.
+  Finally we would like to thank our careful referees for pointing out a flaw in an earlier version of \cref{lem:components} and for several useful comments.
 
-%\bibliographystyle{amsalpha}
-%\bibliography{bibliography}
-
-% pasted from finexrel.bbl
-\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
-\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
-% \MRhref is called by the amsart/book/proc definition of \MR.
-\providecommand{\MRhref}[2]{%
-  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
-}
-\providecommand{\href}[2]{#2}
-\begin{thebibliography}{CFZ02}
-
-\bibitem[CFZ02]{CFZ02}
-Fr{\'e}d{\'e}ric Chapoton, Sergey Fomin, and Andrei Zelevinsky, \emph{Polytopal
-  realizations of generalized associahedra}, Canad. Math. Bull. \textbf{45}
-  (2002), no.~4, 537--566, Dedicated to Robert V. Moody. \MR{1941227
-  (2003j:52014)}
-
-\bibitem[FST08]{FST08}
-Sergey Fomin, Michael Shapiro, and Dylan Thurston, \emph{Cluster algebras and
-  triangulated surfaces. {I}. {C}luster complexes}, Acta Math. \textbf{201}
-  (2008), no.~1, 83--146. \MR{2448067 (2010b:57032)}
-
-\bibitem[FT12]{FT12}
-Sergey Fomin and Dylan Thurston, \emph{{Cluster algebras and triangulated
-  surfaces. Part II: Lambda lengths}}, arXiv e-print 1210.5569 (2012).
-
-\bibitem[FeTu15]{FeTu15}
-Anna {Felikson} and Pavel {Tumarkin}, \emph{{Bases for cluster algebras from
-  orbifolds}}, arXiv e-print 1511.08023 (2015).
-
-\bibitem[FZ02]{FZ02}
-Sergey Fomin and Andrei Zelevinsky, \emph{Cluster algebras. {I}.
-  {F}oundations}, J. Amer. Math. Soc. \textbf{15} (2002), no.~2, 497--529.
-  \MR{1887642}
-
-\bibitem[FZ03]{FZ03}
-\bysame, \emph{Cluster algebras. {II}. {F}inite type classification}, Invent.
-  Math. \textbf{154} (2003), no.~1, 63--121. \MR{2004457}
-
-\bibitem[FZ07]{FZ07}
-\bysame, \emph{Cluster algebras. {IV}. {C}oefficients}, Compos. Math.
-  \textbf{143} (2007), no.~1, 112--164. \MR{2295199 (2008d:16049)}
-
-\bibitem[NS14]{NS14}
-Tomoki Nakanishi and Salvatore Stella, \emph{Diagrammatic description of
-  {$c$}-vectors and {$d$}-vectors of cluster algebras of finite type},
-  Electron. J. Combin. \textbf{21} (2014), no.~1, Paper 1.3, 107. \MR{3177498}
-
-\bibitem[NZ12]{NZ12}
-Tomoki Nakanishi and Andrei Zelevinsky, \emph{On tropical dualities in cluster
-  algebras}, Algebraic groups and quantum groups, Contemp. Math., vol. 565,
-  Amer. Math. Soc., Providence, RI, 2012, pp.~217--226. \MR{2932428}
-
-\bibitem[Rea14]{Re14}
-Nathan Reading, \emph{Universal geometric cluster algebras from surfaces},
-  Trans. Amer. Math. Soc. \textbf{366} (2014), no.~12, 6647--6685. \MR{3267022}
-
-\bibitem[Ste13]{Ste13}
-Salvatore Stella, \emph{Polyhedral models for generalized associahedra via
-  {C}oxeter elements}, J. Algebraic Combin. \textbf{38} (2013), no.~1,
-  121--158. \MR{3070123}
-
-\bibitem[YZ08]{YZ08}
-Shih-Wei Yang and Andrei Zelevinsky, \emph{Cluster algebras of finite type via
-  {C}oxeter elements and principal minors}, Transform. Groups \textbf{13}
-  (2008), no.~3-4, 855--895. \MR{2452619 (2009j:13029)}
-
-\end{thebibliography}
-% end pasted from finextel.bbl
+\bibliographystyle{sigma}
+\bibliography{bibliography}
 
 \end{document}
