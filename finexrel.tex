@@ -15,23 +15,14 @@
 
 % ambients
 \numberwithin{equation}{section}
-\numberwithin{theorem}{section}
-\numberwithin{proposition}{section}
-\numberwithin{lemma}{section}
-\numberwithin{corollary}{section}
-\numberwithin{definition}{section}
-\numberwithin{example}{section}
-\numberwithin{remark}{section}
-\numberwithin{note}{section}
+\numberwithin{figure}{section}
 \newtheorem{Theorem}{Theorem}[section]
 \newtheorem{Corollary}[Theorem]{Corollary}
 \newtheorem{Lemma}[Theorem]{Lemma}
 \newtheorem{Proposition}[Theorem]{Proposition}
 {
-  \theoremstyle{definition}
+  \theoremstyle{Definition}
   \newtheorem{Definition}[Theorem]{Definition}
-  \newtheorem{Note}[Theorem]{Note}
-  \newtheorem{Example}[Theorem]{Example}
   \newtheorem{Remark}[Theorem]{Remark}
 }
 
@@ -96,14 +87,15 @@
 
   Given two cluster variables in a cluster algebra, deciding whether they belong to the same cluster or if they can be obtained from one another by a single mutation is, in general, a hard problem to address.
   In several special situations though, when suitable combinatorial models exist, such questions become much easier to decide.
-  This is the case, for example, of cluster algebras of finite type with an acyclic initial seed where the answer can be given using the \emph{compatibility degree} of the corresponding \emph{$\bg$-vectors}.
+  This is the case, for example, of cluster algebras originating from marked surfaces~\cite{FST08,FT12} and orbifolds~\cite{FST12}, or those having an associated cluster category.
+  Here we will consider the case of cluster algebras of finite type with an acyclic initial seed where the answer can be given uniformly using the \emph{compatibility degree} of the corresponding \emph{$\bg$-vectors}.
 
   Knowing that two cluster variables are exchangeable naturally arises the problem of producing the exchange relation they satisfy.
-  There are partial answers to this question when the algebra is of finite type and has an acyclic initial seed.
-  In \cite{YZ08}, using some determinantal identities on the associated Lie group, the authors were able to give explicit formulas for all the \emph{primitive} exchange relations (i.e. those in which cluster variables only appear in one of the two monomials of the right hand side).
-  Their recipe works for principal coefficients and hence, via separation of additions, for any choice of coefficients.
+  Answers to this question exists depending on the available models; for instance, in the surfaces case, these can be expressed in terms of \emph{skein relations}~\cite{MW13, FeTu15}, while for cluster categories one can leverage the \emph{multiplication formula} of \cite{CK08}.
 
-  In \cite{Ste13} the first author gave a uniform formula for all the exchange relations, albeit only in the coefficient-free case.
+  In \cite{YZ08}, using some determinantal identities on the associated Lie group, the authors were able to give explicit formulas for all the \emph{primitive} exchange relations (i.e. those in which cluster variables only appear in one of the two monomials of the right hand side) in any cluster algebra of finite type with an acyclic initial seed.
+  Their recipe works for principal coefficients and hence, via separation of additions, for any choice of coefficients.
+  In \cite{Ste13} the first author gave a uniform formula for all the exchange relations in the same class of algebras, albeit only in the coefficient-free case.
   The main goal of the current paper is to improve on this result to deal with principal coefficients as well.
   Namely, given any two exchangeable cluster variables in a finite type cluster algebra with acyclic initial seed and principal coefficients, we give an explicit formula for computing their exchange relation.
   This exchange relation has also a geometric interpretation in terms of roots and weights of the corresponding root system.
@@ -133,7 +125,7 @@
     c^{h(i;c)}\omega_i = w_0\omega_i
   \]
   (it is a finite number \cite[Proposition 1.3]{YZ08}).
-  \begin{theorem}[{\cite[Theorem 1.4]{YZ08}}]
+  \begin{Theorem}[{\cite[Theorem 1.4]{YZ08}}]
     The cluster variables of $\cA_\bullet(c)$ are naturally in bijection with the elements of the set
     \[
       \Pi(c)
@@ -143,7 +135,7 @@
       \right\}.
     \]
     To the cluster variable $x_\lambda$ it corresponds its $\bg$-vector $\lambda\in\Pi(c)$.
-  \end{theorem}
+  \end{Theorem}
   This correspondence extends to a bijection between points of $P$ and \emph{cluster monomials} of $\cA_\bullet(c)$ (cf. \cite[Theorem 1.2]{Ste13}); for $\lambda\in P$ we will denote by $x_\lambda$ the cluster monomial whose $\bg$-vector is $\lambda$.
 
   The set $\Pi(c)$ is naturally endowed with a permutation $\tau_c$ defined by
@@ -159,7 +151,7 @@
   This is a combinatorial shadow of a notable automorphism of the coefficient-free counterpart of $\cA_\bullet(c)$ sending the cluster variable $x_\lambda$ to $x_{\tau_c(\lambda)}$.
 
   Let $Q$ be the \emph{root lattice} of $\Gamma$ with simple roots $\alpha_i$; as for $P$, we will routinely think of elements in $Q$ as integer vectors using the basis of simple roots.
-  \begin{definition}
+  \begin{Definition}
     The \emph{compatibility degree} $(\cdot||\cdot)_c$ is the unique $\tau_c$-invariant function on pairs of elements of $\Pi(c)$ defined by the initial conditions
     \[
       (\omega_i||\lambda)_c
@@ -167,9 +159,9 @@
       \left[ (c^{-1}-\id)\lambda ; \alpha_i\right]_+
     \]
     where, for $v$ in $Q$, $[v;\alpha_i]$ denotes the $i$-th coefficient of $v$  and $[m]_+$ is a shorthand for $\max\{m, 0\}$ (cf. \cite[Proposition 5.1]{YZ08}).
-  \end{definition}
+  \end{Definition}
   The name comes from the following important property, consequence of the polytopal realization of the cluster fan of $\cA_\bullet(c)$ (\cite{CFZ02,Ste13}).
-  \begin{proposition}
+  \begin{Proposition}
     Two weights $\lambda$ and $\mu$ from $\Pi(c)$ are
     \begin{itemize}
       \item
@@ -186,10 +178,10 @@
           (\lambda||\mu)_c = 1 = (\mu||\lambda)_c
         \]
     \end{itemize}
-  \end{proposition}
+  \end{Proposition}
 
   Our starting point is the following restatement of \cite[Proposition 5.1]{Ste13}.
-  \begin{proposition}
+  \begin{Proposition}
     Suppose $\lambda$ and $\mu$ are exchangeable weights in $\Pi(c)$.
     Then the set
     \[
@@ -199,11 +191,11 @@
     \]
     consists precisely of two weights.
     One of them is $\lambda+\mu$; denote the other by $\lambda\uplus_c\mu$.
-  \end{proposition}
+  \end{Proposition}
 
   Let $y_1,\dots,y_n$ be the generators of the coefficient semifield of $\cA_\bullet(c)$ and denote by $y^\alpha$ the product $\prod_{i=1}^n y_i^{[\alpha;\alpha_i]}$.
 
-  \begin{theorem}
+  \begin{Theorem}
     \label{thm:main}
     Suppose $\lambda$ and $\mu$ are exchangeable weights in $\Pi(c)$.
     Then there exists a unique  positive root  $\alpha$ in the root system of $\Gamma$ such that
@@ -224,7 +216,7 @@
       \label{eq:exrel}
       x_\lambda x_\mu = x_{\lambda+\mu} + y^\alpha x_{\lambda\uplus_c\mu}.
     \end{equation}
-   \end{theorem}
+   \end{Theorem}
 
   Note that the shape of \cref{eq:exrel} follows immediately from the coefficient-free case \cite[Proposition 5.2]{Ste13} together with the observations that $\bc$-vectors are roots in the root system of $\Gamma$ (cf. \cite{NS14})  and that the exchange relations in $\cA_\bullet(c)$ are homogeneous.
   The real content of our theorem are therefore the explicit conditions~\cref{eq:system} and~\cref{eq:dual} that determine $\alpha$.
@@ -236,7 +228,7 @@
   On the other hand, \cref{eq:system} is not, in principle, sufficient on its own because $B_c$ is, in general, not invertible.
   Nonetheless, thanks to the fact that we are dealing with positive roots, we will see that it is still enough in every case except in type $D_n$.
 
-  \begin{remark}
+  \begin{Remark}
     \label{geom}
     \cref{eq:system} has the following geometric interpretation.
     Associating the $\bg$-vectors with weights, one can observe that every cluster corresponds to a cone with facets being mirrors of reflections of the associated Weyl group (see \cref{fig:exchange_relation}).
@@ -248,7 +240,7 @@
       \caption{Exchange relation: $x_\lambda$ and $x_\mu$ are exchangeable cluster variables, $\alpha$ is the required root.}
       \label{fig:exchange_relation}
     \end{figure}
-\end{remark}
+\end{Remark}
 
 \section{Proof of \cref{thm:main}}
 \label{proof}
@@ -376,11 +368,11 @@
 \end{figure}
 
   We begin our analysis with a well known consideration on the rank of $B_c$.
-  \begin{lemma}
+  \begin{Lemma}
     \label{lem:dimensions}
     If the type of $\Gamma$ is not $D_n$, then the kernel of $B_c$ has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
     If the type of $\Gamma$ is $D_n$, then the kernel of $B_c$ has dimension $2$ if $n$ is even and $1$ if $n$ is odd.
-  \end{lemma}
+  \end{Lemma}
   \begin{proof}
     The rank of $B_c$ is invariant under mutations so it suffices to establish the property for a single choice of $c$.
     Let then $c=s_1\cdots s_n$ so that all the positive entries of $B_c$ are above the main diagonal.
@@ -408,26 +400,26 @@
 
   Alternatively, one could use the following observation to obtain type $E_7$ from type $E_8$.
 
-  \begin{remark}
+  \begin{Remark}
     \label{rk:induction}
     A careful reader may observe that \cref{lem:dimensions} could be used to establish \cref{thm:main} directly in all finite types with the exception of $D_n$.
     Indeed it would be enough to extend any $(2k+1) \times (2k+1)$ exchange matrix to a $(2k+2) \times (2k+2)$ exchange matrix of the same type and deduce the required property from the resulting algebra embedding.
     Instead, we prefer to give a more explicit argument that will simplify the analysis in type $D_n$ as well.
-  \end{remark}
+  \end{Remark}
 
   From now on we assume that $\Gamma$ is not of exceptional type.
   To deal with the remaining infinite families we compute explicit generators for the kernel of $B_c$.
   Our argument will hinge upon an explicit description of the possible differences of positive roots; unfortunately in small rank non-generic situations may arise.
   We therefore verify \cref{thm:main} by direct inspection in types $A_3$, $B_3$, $C_3$, $D_4$ and $D_6$; the calculations required are similar to those for type $E_7$ and again we omit the details here.
 
-  \begin{definition}
+  \begin{Definition}
     The \emph{support} of a vector $v$ is the full subdiagram of $\Gamma$ induced by the nodes corresponding to the non-zero coordinates of $v$ when written in the basis of simple roots.
-  \end{definition}
+  \end{Definition}
 
-  \begin{lemma}
+  \begin{Lemma}
     Let $\Gamma$ be of type $A_n$, $B_n$, or $C_n$ with $n=2k+1$.
     Then the support of the vector spanning the kernel of $B_c$ has exactly $k+1$ connected components.
-  \end{lemma}
+  \end{Lemma}
   \begin{proof}
     By \cref{lem:dimensions} there is a unique (up to a scalar) non-zero vector $v$ such that $B_cv=0$.
     Since the only non-zero entries in $B_c$ are located in the two diagonals adjacent to the main diagonal (cf. \cref{fig:Dynkin}), $v$ is a linear combination of the $\alpha_i$ with odd $i$.
@@ -449,21 +441,21 @@
     \end{equation}
   \end{proof}
 
-  \begin{lemma}
+  \begin{Lemma}
     \label{lem:ker_Dn_even}
     Let $\Gamma$ be of type $D_n$ with $n$ odd.
     Then the kernel of $B_c$ is generated by $\alpha_{n-1}+\alpha_n$ if $(n-1) \prec_c (n-2) \prec_c n$ or $n \prec_c (n-2) \prec_c (n-1)$.
     Otherwise it is generated by $\alpha_{n-1}-\alpha_n$.
-  \end{lemma}
+  \end{Lemma}
   \begin{proof}
     Again by \cref{lem:dimensions} there is a unique (up to a scalar) non-zero vector $v$ such that $B_cv=0$.
     The last two columns of $B_c$ are either identical (in which case $v=\alpha_{n-1}-\alpha_n$), or differ only in sign so that $v=\alpha_{n-1}+\alpha_n$.
   \end{proof}
 
-  \begin{lemma}
+  \begin{Lemma}
     Let $\Gamma$ be of type $D_n$ with $n=2k$ and $n\geq 4$.
     Then the kernel of $B_c$ is generated by a vector whose support has exactly $k$ connected components together with one of the two vectors $\alpha_{n-1}\pm\alpha_n$ according to the same prescriptions of \cref{lem:ker_Dn_even}.
-  \end{lemma}
+  \end{Lemma}
   \begin{proof}
     The result follows directly by combining the previous two lemmas.
     Indeed the vector \cref{eq:vector} is killed by $B_c$ because it only interacts with a sub-matrix of type $A_{n-1}$ while the same reasoning of \cref{lem:ker_Dn_even} applies to one of the two $\alpha_{n-1}\pm\alpha_n$.
@@ -471,33 +463,38 @@
   \end{proof}
 
   To use these information we need the following easy observation obtained by inspection of the appropriate list of roots.
-  \begin{lemma}
+  \begin{Lemma}
     \label{lem:components}
     If $\Gamma$ is of type $A_n$, $B_n$, or $C_n$, then the support of the difference of any two positive roots in the root system of $\Gamma$ has at most two connected components.
     If $\Gamma$ is of type $D_n$, then the support of the difference of any two positive roots in the root system of $\Gamma$ has at most three connected components.
-  \end{lemma}
+  \end{Lemma}
+  \begin{proof}
+    We discuss type $A_n$, the reaining types are obtained by similar considerations.
+    In this case positive roots correspond to connected full subdiagrams of the associated Dynkin diagram.
+    The support of the difference of two such roots $\alpha$ and $\beta$ is thus given by the symmetric difference of the support of $\alpha$ and the support of $\beta$.
+  \end{proof}
 
-  \begin{corollary}
+  \begin{Corollary}
     If $\Gamma$ is of type $A_n$, $B_n$, or $C_n$ with $n=2k+1\geq 5$, \cref{eq:system} has a unique solution among the positive roots of $\Gamma$.
-  \end{corollary}
+  \end{Corollary}
   \begin{proof}
     Indeed the difference of any two solutions is in the kernel of $B_c$ and this is generated by a vector with at least $k+1\geq3$ connected components.
   \end{proof}
   This concludes the proof of \cref{thm:main} for types $A_n$, $B_n$ and $C_n$.
 
-  \begin{corollary}
+  \begin{Corollary}
     \label{cor:kernel-Dn}
     Suppose the type of $\Gamma$ is $D_n$ and $n\geq 7$.
     If \cref{eq:system} has more than one solution among the positive roots of $\Gamma$ then it has precisely two.
     Their difference is in the span of either one of $\alpha_{n-1}\pm\alpha_n$ depending on the relative order in which $s_{n-2}$, $s_{n-1}$, and $s_n$ appear in $c$.
-  \end{corollary}
+  \end{Corollary}
   \begin{proof}
     The only possibility for two distinct roots to be solutions of \cref{eq:system} is for their difference to be in the span of $\alpha_{n-1}\pm\alpha_n$ (the other generating vector of the kernel of $B_c$, when it exists, has too many connected components by the assumption on $n$).
     We can conclude then by observing that positive roots in type $D_n$ with such prescribed difference come in pairs.
   \end{proof}
 
   To conclude the proof of \cref{thm:main} it suffices to show that, in type $D_n$, whenever \cref{eq:system} is satisfied by two roots only one of them verifies \cref{eq:dual} as well.
-  We will do so using the realization of cluster algebras via triangulations and laminations on surfaces introduced in \cite{FST08,FT12}.
+  We will do so using the realization of cluster algebras via triangulations and laminations on surfaces introduced in \cite{FST08,FT12} (see also~\cite{Sch08} for a detailed description of the model for $D_n$ in the coefficient-free case).
   The reader not familiar with the relevant terminology can find a simplified summary (sufficient for the case at hand) in the beginning of \cite[Section 4.1]{NS14}.
 
   Any cluster algebra of type $D_n$ can be realized as a triangulated once-punctured disk.
@@ -513,10 +510,10 @@
     \label{fig:D_n-roots}
   \end{figure}
 
-  \begin{lemma}
+  \begin{Lemma}
     \label{lem:is-radius}
     In all the cases in which \cref{eq:system} is satisfied by two distinct positive roots at least one of $x_\lambda$ and $x_\mu$ corresponds to a radius.
-  \end{lemma}
+  \end{Lemma}
   \begin{proof}
     We will show that, if the arcs corresponding to $x_\lambda$ and $x_\mu$ are both chords, then there is a unique positive root satisfying \cref{eq:system}.
     The two cases to be considered, namely $n-2 \prec_c n$ and  $n \prec_c n-2$, are pictured in \cref{fig:D_n-roots}.
@@ -534,10 +531,10 @@
     If instead they give shear coordinate $0$ to both $(n-1)$-st and $n$-th elementary laminations, then they also assign $0$ to the $(n-2)$-nd elementary lamination.
   \end{proof}
 
-  \begin{lemma}
+  \begin{Lemma}
     \label{lem:g-vector-of-radii}
     The $\bg$-vector of any cluster variable associated to a radius has exactly one among its $(n-1)$-st and $n$-th fundamental weight coordinates equal to $0$; the other one is $\pm 1$.
-  \end{lemma}
+  \end{Lemma}
   \begin{proof}
     \cite{FST08,FT12} do not contain an explicit recipe to compute the $\bg$-vector of the cluster variable associated to an arc.
     An easy rule, though, can be obtained using \cite[Eq. (1.13)]{NZ12}: it suffices to reflect our surface and compute the shear coordinates of the elementary lamination corresponding to the desired arc with respect to the initial triangulation (see e.g.~\cite[Prop. 5.2]{Re14} or~\cite[Lemma 8.6]{FeTu15}).
@@ -575,16 +572,16 @@
   \]
   Therefore, since the pairing $\langle\cdot\,,\cdot\rangle$ is integer-valued when computed on (co-)roots and weights, $\alpha$ and $\alpha'$ cannot both satisfy \cref{eq:dual}.
 
-  \begin{remark}
+  \begin{Remark}
     In view of some ongoing work of the first author with Nathan Reading it appears that a modified version of \cite[Propositions 5.1 and 5.2]{Ste13} holds in affine types as well.
     We expect that \cref{thm:main}, or a refined version of it, could hold there too.
-    The analysis required to establish it, though, will probably be more complicated than the finite case one because the corank of $B_c$ can be as big as $4$ and the argument of \cref{rk:induction} does not apply.
-  \end{remark}
+    The analysis required to establish it, though, will probably be more complicated than the finite case one because the corank of $B_c$ can be as big as $4$ and the argument of Remark~\ref{rk:induction} does not apply.
+  \end{Remark}
 
 \subsection*{Acknowledgements}
   This paper was completed during a visit to Durham University; the first author would like to thank both Grey College and the Department of Mathematics for the hospitality received.
   We are also grateful to Anna Felikson for many fruitful discussions, and to Nathan Reading for his help with some early attempts at \cref{thm:main} and for his comments on a preliminary version of this paper.
-  Finally we would like to thank our careful referees for pointing out a flaw in an earlier version of \cref{lem:components} and for several useful comments.
+  Finally we would like to thank our anonymous referees for pointing out a flaw in an earlier version of \cref{lem:components} and for several useful comments.
 
 \bibliographystyle{sigma}
 \bibliography{bibliography}
