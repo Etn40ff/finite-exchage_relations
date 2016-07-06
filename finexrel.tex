@@ -91,7 +91,7 @@
   Here we will consider the case of cluster algebras of finite type with an acyclic initial seed where the answer can be given uniformly using the \emph{compatibility degree} of the corresponding \emph{$\bg$-vectors}.
 
   Knowing that two cluster variables are exchangeable naturally arises the problem of producing the exchange relation they satisfy.
-  Answers to this question exists depending on the available models; for instance, in the surfaces case, these can be expressed in terms of \emph{skein relations}~\cite{MW13, FeTu15}, while for cluster categories one can leverage the \emph{multiplication formula} of \cite{CK08}.
+  Answers to this question exist depending on the available models; for instance, in the surfaces case, these can be expressed in terms of \emph{skein relations}~\cite{MW13}, while for cluster categories one can leverage the \emph{multiplication formula} of \cite{CK08}.
 
   In \cite{YZ08}, using some determinantal identities on the associated Lie group, the authors were able to give explicit formulas for all the \emph{primitive} exchange relations (i.e. those in which cluster variables only appear in one of the two monomials of the right hand side) in any cluster algebra of finite type with an acyclic initial seed.
   Their recipe works for principal coefficients and hence, via separation of additions, for any choice of coefficients.
@@ -237,7 +237,7 @@
       \begin{center}
         \includegraphics[scale=0.4]{cones-section.eps}
       \end{center}
-      \caption{Exchange relation: $x_\lambda$ and $x_\mu$ are exchangeable cluster variables, $\alpha$ is the required root.}
+      \caption{Geometric interpretation of exchange relations: $x_\lambda$ and $x_\mu$ are exchangeable cluster variables, $\lambda$ and $\mu$ their $\bg$-vectors, and $\alpha^\perp$ is the wall in the cluster fan separating the two clusters.}
       \label{fig:exchange_relation}
     \end{figure}
 \end{Remark}
@@ -339,7 +339,7 @@
             \dynkindot{7}{0}{7}{below}
             \dynkindot{3}{1}{8}{right}
           \end{dynkin}
-          \vspace{2ex}
+          \vfill
 
         \item[$F_4$:]
           \begin{dynkin}
@@ -351,7 +351,7 @@
             \dynkindot{3}{0}{3}{below}
             \dynkindot{4}{0}{4}{below}
           \end{dynkin}
-          \vspace{2ex}
+          \vfill
 
         \item[$G_2$:]
           \begin{dynkin}
@@ -367,7 +367,7 @@
   \label{fig:Dynkin}
 \end{figure}
 
-  We begin our analysis with a well known consideration on the rank of $B_c$.
+  We begin our analysis with some easy considerations on the rank of $B_c$.
   \begin{Lemma}
     \label{lem:dimensions}
     If the type of $\Gamma$ is not $D_n$, then the kernel of $B_c$ has dimension $0$ if $n$ is even and $1$ if $n$ is odd.
@@ -387,7 +387,7 @@
     \]
     where $B_c'$ is a $(n-2)\times(n-2)$ matrix in the same infinite class of $B_c$.
     The result follows then immediately by induction because all $2\times2$ skew-symmetrizable non-zero matrices are invertible.
-    The same argument, with $n=1$ as base of the induction, shows that when $n$ is odd $\det(B_c)=0$.
+    On the other hand, when $n$ is odd, $B_c$ being skew-symmetrizable implies immediately that $\det(B_c)=0$.
     Combining the two assertions we get that, for odd $n$, the dimension of the kernel of $B_c$ is $1$.
 
     To get the result in type $D_n$ it is enough to observe that the last two rows (and columns) of $B_c$ are identical.
@@ -396,7 +396,7 @@
 
   This establishes \cref{thm:main} whenever $n$ is even and the type of $\Gamma$ is not $D_n$.
   In particular the result holds for all the exceptional types apart from type $E_7$; in order to simplify the remaining analysis we check this case by hand.
-  For each possible $c$, the computations required amount to show that, whenever two positive roots satisfy \cref{eq:system}, only one of them satisfy also \cref{eq:dual}; we omit the straightforward but lengthy calculations.
+  For each possible $c$, the computations required amount to show that, whenever two positive roots satisfy \cref{eq:system}, only one of them satisfies also \cref{eq:dual}; we omit the straightforward but lengthy calculations.
 
   Alternatively, one could use the following observation to obtain type $E_7$ from type $E_8$.
 
@@ -469,7 +469,7 @@
     If $\Gamma$ is of type $D_n$, then the support of the difference of any two positive roots in the root system of $\Gamma$ has at most three connected components.
   \end{Lemma}
   \begin{proof}
-    We discuss type $A_n$, the reaining types are obtained by similar considerations.
+    We discuss type $A_n$, the remaining types are obtained by similar considerations.
     In this case positive roots correspond to connected full subdiagrams of the associated Dynkin diagram.
     The support of the difference of two such roots $\alpha$ and $\beta$ is thus given by the symmetric difference of the support of $\alpha$ and the support of $\beta$.
   \end{proof}
