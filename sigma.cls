@@ -57,11 +57,10 @@ v1.7 Document class for ``Symmetry, Integrability and Geometry: Methods and Appl
 \newcommand{\evenhead}{Author \ name}
 \newcommand{\oddhead}{Article \ name}
 \newcommand{\theArticleName}{Article name}
-\newcommand{\Volume}{{\bf *}}
+\newcommand{\Volume}{{\bf 12}}
 \newcommand{\Paper}{Paper}
-\newcommand{\PaperNumber}{???}
-\newcommand{\PublicationYear}{201*}
-
+\newcommand{\PaperNumber}{1}
+\newcommand{\PublicationYear}{2016}
 
 
 
@@ -87,7 +86,7 @@ Symmetry, Integrability and Geometry: Methods and Applications
 \newcommand{\URLaddressD}[1]{\ifthenelse{\equal{#1}{}}{}{\par\noindent {$\phantom{\dag}$~\rm URL: }{\tt  #1} \par}}
 \newcommand{\URLaddressDD}[1]{\ifthenelse{\equal{#1}{}}{}{\par\noindent {$\phantom{\dag^1}$~\rm URL: }{\tt  #1} \par}}
 \newcommand{\ArticleDates}[1]{\vspace{2mm}\par\noindent {\small {\rm #1} \par
-\noindent
+\noindent %{\rm Original article is available at}
 {\href{http://dx.doi.org/10.3842/SIGMA.\PublicationYear.\PaperNumber}{http://dx.doi.org/10.3842/SIGMA.\PublicationYear.\PaperNumber}
 }} \par}
 \newcommand{\Abstract}[1]{\vspace{6mm}\par\noindent\hspace*{10mm}
@@ -111,6 +110,8 @@ Symmetry, Integrability and Geometry: Methods and Applications
 {\oddhead \hfil \thepage}\vskip4pt\hrule}}}
 \renewcommand{\@evenfoot}{}
 \renewcommand{\@oddfoot}{}
+%\renewcommand{\@evenfoot}{\footnotesize \sf \supplementTitle \hfil}
+%\renewcommand{\@oddfoot}{\hfil \footnotesize \sf \supplementTitle}
 
 
 % Papersize
@@ -193,6 +194,7 @@ Symmetry, Integrability and Geometry: Methods and Applications
    \nobreak\hspace{0pt}\vrule height 0pt depth \@tempdima width 0pt
   }%
 }
+
 
 
 \endinput
